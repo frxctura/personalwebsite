@@ -1,3 +1,3 @@
 document.getElementById("pageback").onclick = function () {
-    location.href = "https://www.chax.ga/";
+    location.href = "https://megachad.chax.ga/";
 };
