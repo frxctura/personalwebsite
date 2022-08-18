@@ -39,11 +39,26 @@ body {
   position:relative;
   color: rgb(88 199 250);
   font-weight:100;
-  transition:.7s;
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transition: 0.7s;
   transform:translateY(100px);
   border-radius: 25%;
   overflow: hidden;
   top: -3vw;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(100px);
+	}
+	50% {
+		transform: translatey(80px);
+	}
+	100% {
+		transform: translatey(100px);
+	}
 }
 
 .card:hover .image {
@@ -204,4 +219,3 @@ a:visited {
 a:hover {
   color: rgb(255, 111, 255);
 }
-
