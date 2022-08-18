@@ -92,6 +92,9 @@ button:active {
   opacity:1;
   transition:.6s;
   opacity: 0;
+  overflow-wrap: break-word;
+  display: inline-block;
+  word-break: break-word;
 }
 }
 
