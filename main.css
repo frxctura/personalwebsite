@@ -77,7 +77,7 @@ h2 {
 }
 
 @media all and (max-width: 675px) and (min-width: 280px) {
-  h2 {
+.text2 {
   font-size:23px;
   font-family:roboto;
   color:rgb(250, 88, 155);
