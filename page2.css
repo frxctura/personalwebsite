@@ -80,6 +80,21 @@ button:active {
 }
 */
 
+@media all and (max-width: 675px) and (min-width: 280px) {
+.text2 {
+  font-size:23px;
+  font-family:roboto;
+  color:rgb(250, 88, 155);
+  font-weight:400;
+  margin:0;
+  padding:0;
+  transform:translateY(200px);
+  opacity:1;
+  transition:.6s;
+  opacity: 0;
+}
+}
+
 .bottomrighttext {
   position: absolute;
   color: white;
