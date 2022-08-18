@@ -52,7 +52,6 @@ body {
 }
 
 .text2 {
-  display: inline-block;
   color:#ffdbe7;
   font-family: 'Roboto', sans-serif;
   font-weight:100;
@@ -90,8 +89,6 @@ h2 {
   transition:.7s;
   opacity:0;
   overflow-wrap: break-word;
-  display: inline-block;
-  word-break: break-word;
 }
 }
 
