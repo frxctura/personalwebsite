@@ -82,7 +82,7 @@ button:active {
 
 @media all and (max-width: 675px) and (min-width: 280px) {
 .text2 {
-  font-size:23px;
+  font-size:13px;
   font-family:roboto;
   color:rgb(250, 88, 155);
   font-weight:400;
