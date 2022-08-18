@@ -88,6 +88,8 @@ h2 {
   transition:.7s;
   opacity:0;
   overflow-wrap: break-word;
+  display: inline-block;
+  word-break: break-word;
 }
 }
 
