@@ -88,7 +88,7 @@ button {
   text-transform:uppercase;
   font-weight:300;
   letter-spacing:1px;
-  color:rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
   background-color: #ff80a6;
   background-image: linear-gradient(315deg, #f90b8e 0%, #fe4860 74%);
   border:none;
