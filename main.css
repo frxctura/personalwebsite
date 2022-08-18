@@ -78,16 +78,16 @@ h2 {
 
 @media all and (max-width: 675px) and (min-width: 280px) {
 .text2 {
-  font-size:15px;
-  font-family:roboto;
-  color:rgb(250, 88, 155);
-  font-weight:400;
-  margin:0;
-  padding:0;
+  color:#ffdbe7;
+  font-family: 'Roboto', sans-serif;
+  font-weight:100;
+  font-size:23px;
+  width:500px;
+  line-height:25px;
   transform:translateY(200px);
-  opacity:1;
-  transition:.6s;
-  opacity: 0;
+  transition:.7s;
+  opacity:0;
+  overflow-wrap: break-word;
 }
 }
 
