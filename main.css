@@ -76,9 +76,9 @@ h2 {
   opacity: 0;
 }
 
-@media screen and(max-width:760px){
+@media all and (max-width: 675px) and (min-width: 280px) {
   h2 {
-  font-size:28px;
+  font-size:23px;
   font-family:roboto;
   color:rgb(250, 88, 155);
   font-weight:400;
