@@ -21,8 +21,8 @@ body {
 .card{
   position: relative;
   display:flex;
-  height:530px;
-  max-width: 45rem;
+  height:45rem;
+  max-width: 85rem;
   background-color:  #1f1f1f;
   border-radius: 15px;
   justify-content: center;
