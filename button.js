@@ -1,3 +1,3 @@
-    document.getElementById("pronouns").onclick = function () {
-        location.href = "https://en.pronouns.page/@Chax";
+    document.getElementById("steam").onclick = function () {
+        location.href = "https://steamcommunity.com/id/Chax4/";
     };
