@@ -1,38 +1,60 @@
 <!DOCTYPE html>
-<head>
-    <title> Chax's Website </title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/69131569?s=144&u=612587c270a0d369f9fd8ac00797ad492297c9b1&v=4">
-    <meta content="Chax's Site" property="og:title" />
-    <meta content="Gigachad Website" property="og:description" />
-    <meta content="https://chax.has-big-boobs.online/" property="og:url" />
-    <meta content="https://raw.githubusercontent.com/Chax1/personalwebsite/main/megachad.jpg" property="og:image" />
-    <meta content="#FF69B4" data-react-helmet="true" name="theme-color" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-</head>
-<body>
-    <div class="main">
-        <div class="card">
-        <div class="image"><img src="https://avatars.githubusercontent.com/u/69131569?s=144&u=612587c270a0d369f9fd8ac00797ad492297c9b1&v=4"></div>
-        <div class="text1">Hover/Tap here</div>
-    <div class="hover">
-        <h2>Hello,</h2>
-    <wrapper>
-        <div class="text2">I'm Maxine, a 18 year old (she/her) living in Germany with a passion for Music, VR, and Code</div>
-        <button id="steam">Steam</button>
-        <button id="github">GitHub</button>
-        <button id="playlist">Playlist</button>
-    </wrapper>
-        <br>
-        <br>
-    </div>
-    <button class="buttonright" id="page2"> >> </button>
-    </div>
-    </div>
-    <div class="bottomrighttext">This site is open source and hosted for free, see <a href="https://github.com/Chax1/personalwebsite">here</a></div>
-</body>
+<html lang="en">
 
-<script src="button.js"></script>
-<script src="githubbutton.js"></script>
-<script src="playlistbutton.js"></script>
-<script src="page2.js"></script>
+<head>
+  <title>Maxine's Site</title>
+  <meta content="Maxine" property="og:title">
+  <meta content="Welcome" property="og:description">
+  <link rel="icon" type="image/x-icon" href="/images/pfp.gif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Josefin+Sans:wght@500&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
+  <div class="overlay" id="volumeWarning">
+    <h4 style="font-size: 12pt;">[VOLUME/FLASHING LIGHTS WARNING]</h4>
+  </div>
+  <div id="actualContent">
+    <video loop style="display: none;" id="bgVideo">
+      <source src="https://cdn.discordapp.com/attachments/1067540909736067123/1174507227567099965/Weval_-_Someday_Official_Video_720p_h264.mp4?ex=6567d818&is=65556318&hm=9d217f77fac33c2aca7cb3f31c5bda5a24314adc9c8adf119a9dc2a3b5150f42&" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+    <div class="container">
+      <div class="avatar-container">
+        <img src="https://avatars.githubusercontent.com/u/69131569?s=144&u=612587c270a0d369f9fd8ac00797ad492297c9b1&v=4" alt="Avatar" class="avatar">
+      </div>
+      <p class="greeting">Heya I'm
+      <p class="greeting-rainbow">Maxine</p>
+      <p class="details"><b>she/her</b><br>
+        an 18 year old C# developer living in Germany with a passion for code, VR and music</p>
+      <a href="mailto:chaxinquiries@gmail.com" class="pill"><i class="fa-solid fa-envelope fa-lg"></i> <b>Contact
+          Me</b></a>
+      <div class="bottom-container">
+        <div class="icon-container">
+          <a href="https://github.com/Chax1" class="icon-circle" target="_blank">
+            <i class="fa-brands fa-github fa-lg"></i>
+          </a>
+          <a href="https://steamcommunity.com/id/Chax4/" class="icon-circle" target="_blank">
+            <i class="fa-brands fa-steam fa-lg"></i>
+          </a>
+          <a href="https://open.spotify.com/playlist/5fP2Lw1eLbRrGXZcoy1Wik?si=165e64fcb51b4f40&nd=1" class="icon-circle" target="_blank">
+            <i class="fa-brands fa-spotify fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-made-by">
+    Site made by <a href="https://github.com/Chax1" target="_blank">Maxine</a>
+  </div>
+</body>
+<script src="cursor.js"></script>
+<script src="handleclick.js"></script>
+</html>
