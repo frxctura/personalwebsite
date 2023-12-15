@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #222;
+            color: #ddd;
+        }
+
+        h1 {
+            color: #ff7f7f;
+        }
+
+        p {
+            color: #bcbcbc;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #297fb8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Privacy Statement</h1>
+    <div>
+        <p>This privacy statement outlines the information collected and how it is used by the Auto Upload script.</p>
+
+        <h2>1. Information Collected</h2>
+        <ul>
+            <li>Folder Path: The directory path provided by the user for video files.</li>
+            <li>Default Upload Title: The default title entered by the user for video uploads.</li>
+            <li>Default Upload Description: The default description entered by the user for video uploads.</li>
+        </ul>
+
+        <h2>2. Usage of Information</h2>
+        <ul>
+            <li>Folder Path: Used to locate video files for upload.</li>
+            <li>Default Upload Title: Used as the default title for video uploads.</li>
+            <li>Default Upload Description: Used as the default description for video uploads.</li>
+        </ul>
+
+        <h2>3. YouTube API Credentials</h2>
+        <p>The script requires YouTube API credentials for authentication. The provided credentials file (secret.json) is used exclusively for this purpose.</p>
+
+        <h2>4. Storage of Information</h2>
+        <p>User-provided information is stored locally in a configuration file (config.json) to maintain user preferences across script runs. YouTube API credentials are stored in a token file (token.pickle) to enable automatic authentication for subsequent runs.</p>
+
+        <h2>5. Video Uploads</h2>
+        <p>Video files are uploaded to YouTube using the provided API credentials. Uploaded videos may be set as private or public, as specified by the user.</p>
+
+        <h2>6. Security</h2>
+        <p>All stored information, including API credentials, is kept securely on the user's machine. The script does not transmit any user data to external servers.</p>
+
+        <h2>7. OBS Integration</h2>
+        <p>The script checks for the running status of OBS (Open Broadcaster Software) using the OBS WebSocket. No data is collected from OBS; the check is solely for integration purposes.</p>
+
+        <h2>8. Third-Party Libraries</h2>
+        <p>The script uses third-party libraries, including Google API libraries and OBS WebSocket, for functionality. Refer to their respective privacy policies for more information.</p>
+
+        <h2>9. Consent</h2>
+        <p>By using the Auto Upload script, you consent to the collection and use of information as outlined in this privacy statement.</p>
+
+        <h2>10. Contact Information</h2>
+        <p>For any questions or concerns regarding privacy, you may <a href="mailto:chaxprivate@gmail.com">contact us</a>.</p>
+    </div>
+</body>
+
+</html>
