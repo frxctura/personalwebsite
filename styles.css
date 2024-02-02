@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap');
 
-* {
-    cursor: none !important;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -17,7 +13,6 @@ body {
     height: 100vh;
     font-family: 'JetBrains Mono', monospace;
     overflow: hidden;
-    cursor: none;
 }
 
 #bgVideo {
@@ -39,28 +34,6 @@ body {
     position: fixed;
     top:0;
     left:0;
-}
-
-.cursor-dot {
-    width: 25px;
-    height: 25px;
-    backdrop-filter: blur(2px);
-}
-
-.cursor-outline {
-    width: 25px;
-    height: 25px;
-    border: 2px solid hsla(0, 0%, 100%, 0.5);
-}
-
-.cursor-dot, .cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 3;
-    pointer-events: none;
 }
 
 .overlay {
@@ -193,7 +166,7 @@ body {
 
 .pill:hover {
     background-color: #5b5d64;
-    cursor: none;
+    cursor:pointer;
 }
 
 /* BOX 2 */
@@ -237,18 +210,19 @@ body {
     height: 100%;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
     transition: left 0.3s; /* Add a smooth transition for the shine effect */
-    cursor: none;
+    cursor:pointer;
 }
 
 .icon-circle:hover {
     background-color: #6e7080; /* Change background color on hover */
-    cursor: none;
+    cursor:pointer;
 }
 
 .icon-circle:hover::before {
     left: 100%;
-    cursor: none;
+    cursor:pointer;
 }
+
 
 @keyframes borderRotate {
     0% {
