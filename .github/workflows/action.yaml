@@ -1,0 +1,36 @@
+name: Update Avatar
+
+on:
+ push:
+    branches:
+      - '*' 
+ schedule:
+    - cron: '0 */12 * * *' 
+
+jobs:
+ update-avatar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20 
+
+      - name: Install dependencies
+        run: npm install node-fetch
+
+      - name: Update avatar in index.html
+        run: node update-avatar.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add index.html
+          git commit -m "Update avatar in index.html"
+          git push
