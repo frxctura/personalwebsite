@@ -1,11 +1,6 @@
 name: Update Avatar
 
-on:
- push:
-    branches:
-      - '*' 
- schedule:
-    - cron: '0 */12 * * *' 
+on: workflow_dispatch
 
 jobs:
  update-avatar:
