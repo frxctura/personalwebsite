@@ -32,5 +32,5 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add index.html
-          git commit -m "Update avatar in index.html"
-          git push
+          git commit -m "Update avatar in index.html" || exit 0
+          git push || exit 0
