@@ -81,11 +81,3 @@ footer {
     color: #c5c5c5;
     text-align: center;
 }
-
-/* Media Queries */
-@media screen and (max-width: 600px) {
-    .social-icons {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons horizontally */
-    }
-}
