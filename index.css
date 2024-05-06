@@ -1,0 +1,98 @@
+/* CSS/index.css */
+body {
+    font-family: "Jetbrains Mono", monospace;
+    background-color: #191919;
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    color: #c5c5c5;
+    overflow: hidden; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    padding: 10px;
+    width: 200px; 
+}
+
+.nav a {
+    display: block; 
+    color: #c5c5c5;
+    text-decoration: none;
+    margin-bottom: 10px; 
+    transition: color 0.3s ease; 
+}
+
+.nav a:hover {
+    color: #666;
+}
+
+.content {
+    text-align: center; 
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%; 
+    border-color: #c5c5c5;
+    border-style:solid;
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+   .nav {
+        position: absolute;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+   .nav a {
+        margin-bottom: 5px;
+    }
+
+   .avatar-container {
+        width: 100%;
+    }
+
+   .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+   .content {
+        margin-top: 30px;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.1rem;
+    background-color: #222;
+    color: #c5c5c5;
+    text-align: center;
+}

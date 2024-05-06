@@ -1,0 +1,91 @@
+/* CSS/index.css */
+body {
+    font-family: "Jetbrains Mono", monospace;
+    background-color: #191919;
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    color: #c5c5c5;
+    overflow: hidden; 
+}
+
+.nav {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    padding: 10px;
+    width: 200px; 
+}
+
+.nav a {
+    display: block; 
+    color: #c5c5c5;
+    text-decoration: none;
+    margin-bottom: 10px; 
+}
+
+.nav a:hover {
+    color: #666;
+}
+
+.nav a:active {
+    animation: buttonPress 0.1s linear;
+}
+
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.content {
+    text-align: center; 
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Updated to center on smaller screens */
+    margin-top: 20px; 
+}
+
+.social-icons a {
+    padding: 1.3rem;
+    background-color: #222; 
+    border-radius: 10px;
+    text-decoration: none;
+    color: #c5c5c5; 
+    transition: background-color 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.social-icons a:hover {
+    background-color: #333; 
+    color: #999; 
+}
+
+.social-icons a:active {
+    animation: buttonPress 0.1s linear;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.1rem;
+    background-color: #222;
+    color: #c5c5c5;
+    text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    .social-icons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+    }
+}
