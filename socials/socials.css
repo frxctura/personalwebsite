@@ -1,4 +1,3 @@
-/* CSS/index.css */
 body {
     font-family: "Jetbrains Mono", monospace;
     background-color: #191919;
@@ -10,7 +9,7 @@ body {
     justify-content: center;
     height: 100vh; 
     color: #c5c5c5;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .nav {
@@ -26,6 +25,7 @@ body {
     color: #c5c5c5;
     text-decoration: none;
     margin-bottom: 10px; 
+    transition: color 0.3s ease; 
 }
 
 .nav a:hover {
