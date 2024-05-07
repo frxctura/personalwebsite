@@ -21,15 +21,15 @@ html.noscroll, body.noscroll {
     top: 0.3rem;
     left: 0.3rem;
     padding: 10px;
-    width: 200px; 
+    width: 200px;
 }
 
 .nav a {
-    display: block; 
+    display: block;
     color: #c5c5c5;
     text-decoration: none;
-    margin-bottom: 10px; 
-    transition: color 0.3s ease; 
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
@@ -89,6 +89,8 @@ footer {
     background-size: 400% 100%;
 }
 
+
+
 /* ANIMS */
 
 @keyframes rainbow_animation {
@@ -102,7 +104,15 @@ footer {
 }
 
 @keyframes buttonPress {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.75); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.75);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
