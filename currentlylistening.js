@@ -22,5 +22,5 @@ async function fetchDataAndUpdateText(userId) {
   
   setInterval(() => {
     fetchDataAndUpdateText(userId);
-  }, 30000);
+  }, 10000);
   
