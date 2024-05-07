@@ -1,8 +1,5 @@
 const fs = require('fs');
 
-// Use dynamic import for node-fetch
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
 fetch("https://api.lanyard.rest/v1/users/468465290531962900")
  .then((res) => res.json())
  .then((data) => {
