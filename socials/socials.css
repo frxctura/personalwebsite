@@ -1,4 +1,4 @@
-body, html {
+body {
     font-family: "Jetbrains Mono", monospace;
     background-color: #191919;
     margin: 0; 
@@ -37,12 +37,12 @@ html.noscroll, body.noscroll {
 }
 
 .nav a:active {
-    animation: buttonPress 0.1s linear;
+    animation: buttonPress 0.3s linear;
 }
 
 @keyframes buttonPress {
     0% { transform: scale(1); }
-    50% { transform: scale(0.95); }
+    50% { transform: scale(0.75); }
     100% { transform: scale(1); }
 }
 
