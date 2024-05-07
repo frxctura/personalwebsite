@@ -1,4 +1,4 @@
-body {
+body, html {
     font-family: "Jetbrains Mono", monospace;
     background-color: #191919;
     margin: 0; 
@@ -12,6 +12,10 @@ body {
     overflow: hidden;
 }
 
+html.noscroll, body.noscroll {
+    overflow: hidden;
+}
+ 
 .nav {
     position: absolute;
     top: 0.3rem;
@@ -60,3 +64,5 @@ footer {
     color: #c5c5c5;
     text-align: center;
 }
+
+/* ANIMS */

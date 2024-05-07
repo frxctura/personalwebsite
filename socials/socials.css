@@ -1,4 +1,4 @@
-body {
+body, html {
     font-family: "Jetbrains Mono", monospace;
     background-color: #191919;
     margin: 0; 
@@ -9,6 +9,10 @@ body {
     justify-content: center;
     height: 100vh; 
     color: #c5c5c5;
+    overflow: hidden;
+}
+
+html.noscroll, body.noscroll {
     overflow: hidden;
 }
 
