@@ -64,5 +64,22 @@ footer {
     color: #c5c5c5;
     text-align: center;
 }
-
+#one:hover {color: transparent;background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);-webkit-background-clip: text;background-clip: text;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%;
+}
+#two:hover {color: transparent;background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);-webkit-background-clip: text;background-clip: text;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%;
+}
+#three:hover {color: transparent;background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);-webkit-background-clip: text;background-clip: text;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%;
+}
+#four:hover {color: transparent;background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);-webkit-background-clip: text;background-clip: text;animation: rainbow_animation 6s ease-in-out infinite;background-size: 400% 100%;
+}
 /* ANIMS */
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
