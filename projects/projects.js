@@ -124,13 +124,13 @@ function getCookie(name) {
     const navLinks = document.querySelectorAll(".nav a");
     navLinks.forEach((link) => {
       link.style.color = scheme.navLinkColor;
+      link.style.borderRight = `1px solid ${scheme.navLinkColor}`; 
     });
-  
-    const projectButtons = document.querySelectorAll(".project");
-    projectButtons.forEach((link) => {
-        link.style.color = scheme.projectButtonFrontground
-        link.style.backgroundColor = scheme.projectButtonBackground
-    })
+
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach((item) => {
+      item.style.borderBottom = `1px solid ${scheme.navLinkColor}`; // Add border-bottom
+    });
     
     const footer = document.querySelector("footer");
     footer.style.backgroundColor = scheme.footerBackgroundColor;

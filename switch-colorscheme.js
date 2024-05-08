@@ -121,6 +121,12 @@ const colorSchemes = [
     const navLinks = document.querySelectorAll(".nav a");
     navLinks.forEach((link) => {
       link.style.color = scheme.navLinkColor;
+      link.style.borderRight = `1px solid ${scheme.navLinkColor}`; 
+    });
+
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach((item) => {
+      item.style.borderBottom = `1px solid ${scheme.navLinkColor}`; // Add border-bottom
     });
   
     const avatar = document.querySelector(".avatar");

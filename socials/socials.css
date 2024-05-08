@@ -21,23 +21,31 @@ html.noscroll, body.noscroll {
     top: 0.3rem;
     left: 0.3rem;
     padding: 10px;
-    width: 200px; 
+    width: 200px;
 }
 
 .nav a {
-    display: block; 
+    display: block;
     color: #c5c5c5;
     text-decoration: none;
-    margin-bottom: 10px; 
-    transition: color 0.3s ease; 
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    border-right: 1px solid #c5c5c5;
 }
 
 .nav a:hover {
     color: #666;
+    transform: translateX(5px); 
 }
 
 .nav a:active {
     animation: buttonPress 0.3s linear;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+    color: #222;
+    border-bottom: 1px solid #c5c5c5; 
 }
 
 @keyframes buttonPress {

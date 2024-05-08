@@ -49,20 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 switch (onlineStatus) {
                     case 'online':
                         statusText.textContent = 'Online';
+                        setActivityOpacity(1);
                         break;
                     case 'idle':
                         statusText.textContent = 'Away';
+                        setActivityOpacity(1);
                         break;
                     case 'dnd':
                         statusText.textContent = 'Do Not Disturb';
+                        setActivityOpacity(1);
                         break;
                     case 'streaming':
                         statusText.textContent = 'Currently Live';
+                        setActivityOpacity(1);
                         break;
                     default:
                         statusText.textContent =  'Offline';
-                        const activitiesDiv = document.querySelector('.activities');
-                        activitiesDiv.parentNode.removeChild(activitiesDiv);
+                        setActivityOpacity(0);
                         return;
                 }
 
@@ -126,6 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         return elapsedTimeString;
+    }
+
+    function setActivityOpacity(opacity) {
+        const activitiesDiv = document.querySelector('.activities');
+        activitiesDiv.style.opacity = opacity;
     }
 
     fetchDataAndUpdateUI();

@@ -106,13 +106,13 @@
     const navLinks = document.querySelectorAll(".nav a");
     navLinks.forEach((link) => {
       link.style.color = scheme.navLinkColor;
+      link.style.borderRight = `1px solid ${scheme.navLinkColor}`; 
     });
-  
-    const socialButtons = document.querySelectorAll(".social-icons a");
-    socialButtons.forEach((link) => {
-        link.style.color = scheme.socialButtonFrontground
-        link.style.backgroundColor = scheme.socialButtonBackground
-    })
+
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach((item) => {
+      item.style.borderBottom = `1px solid ${scheme.navLinkColor}`; // Add border-bottom
+    });
     
     const footer = document.querySelector("footer");
     footer.style.backgroundColor = scheme.footerBackgroundColor;
