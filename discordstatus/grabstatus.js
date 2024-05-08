@@ -2,11 +2,24 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('https://api.lanyard.rest/v1/users/468465290531962900')
         .then(response => response.json())
         .then(data => {
+            console.log("Data from API:", data);
             const discordUser = data.data.discord_user;
-            const activities = data.data.activities;
-            const spotifyActivities = activities.filter(activity => activity.name === 'Spotify');
-            const otherActivities = activities.filter(activity => activity.type !== 4 && activity.name !== 'Spotify');
+            const badgeContainer = document.querySelector('.badge-container');
+            const badgeUrls = [
+                "https://raw.githubusercontent.com/cnrad/lanyard-profile-readme/main/public/assets/badges/House_Bravery.png",
+                "https://raw.githubusercontent.com/cnrad/lanyard-profile-readme/main/public/assets/badges/Active_Developer.png",
+                "https://raw.githubusercontent.com/cnrad/lanyard-profile-readme/main/public/assets/badges/Nitro.png",
+            ];
 
+            badgeUrls.forEach(url => {
+                const badgeImg = document.createElement('img');
+                badgeImg.src = url;
+                badgeImg.alt = "Badge";
+                badgeImg.classList.add('badge');
+                badgeContainer.appendChild(badgeImg);
+            });
+
+            // Display user info and activities...
             const discordAvatar = document.querySelector('.discord-avatar');
             discordAvatar.src = `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`;
 
@@ -56,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const activityList = document.querySelector('.activity-list');
 
+            const otherActivities = data.data.activities.filter(activity => activity.type !== 4 && activity.name !== 'Spotify');
             otherActivities.forEach(activity => {
                 const state = activity.state ? ` - ${activity.state}` : '';
                 const timestamps = activity.timestamps;
@@ -66,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 activityList.appendChild(listItem);
             });
 
+            const spotifyActivities = data.data.activities.filter(activity => activity.name === 'Spotify');
             spotifyActivities.forEach(spotifyActivity => {
                 const listItem = document.createElement('li');
                 listItem.textContent = `Spotify - ${spotifyActivity.details} on ${spotifyActivity.assets.large_text} by ${spotifyActivity.state}`;
