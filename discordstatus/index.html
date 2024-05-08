@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Open Graph tags -->
     <meta property="og:title" content="Maxine's Home">
@@ -22,8 +21,8 @@
     <meta charset="UTF-8">
     <title>Maxine's Home</title>
     <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="socials.css">
-    <script src="socials.js"></script>
+    <link rel="stylesheet" href="discordstatus.css">
+    <script src="discordstatus.js"></script>
 </head>
 
 <body scroll="no">
@@ -33,26 +32,25 @@
         <a href="/socials/">Socials</a>
         <a href="/discordstatus/">Discord Status</a>
     </div>
-    <div class="content">
-        <h1>You can find me here!</h1>
-        <div class="social-icons">
-            <a href="https://github.com/Chax1"><i class="fab fa-github fa-lg"></i> GitHub</a>
-            <a href="https://t.me/Maxine1337"><i class="fab fa-telegram-plane fa-lg"></i> Telegram</a>
-            <a href="https://discord.com/users/468465290531962900"><i class="fab fa-discord fa-lg"></i> Discord</a>
-            <a href="https://open.spotify.com/user/niimk3v9uya2ni43a913z5q61?si=a2395a8df96441d5"><i
-                    class="fab fa-spotify fa-lg"></i> Spotify</a>
-            <a href="https://steamcommunity.com/id/Chax4/"><i class="fa-brands fa-steam fa-lg"></i> Steam</a>
+    <div class="discord-profile">
+        <img class="discord-avatar" src="" alt="Discord Avatar">
+        <div class="user-info">
+            <div class="display-name-username">
+                <h2 class="discord-display-name"></h2>
+                <p class="discord-username"></p>
+            </div>
+            <p class="discord-custom-status"></p>
+            <p class="discord-status"></p>
+            <p class="discord-online-status"></p>
+            <div class="activities">
+                <h3>Activities</h3>
+                <ul class="activity-list"></ul>
+            </div>
         </div>
-        <section class="contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me at <a href="mailto:chaxinquiries@gmail.com">chaxinquiries@gmail.com</a>
-            </p>
-            <h5>This email is checked quite irregularly, for important notices please contact me on
-                Telegram/Discord!</h3>
-        </section>
-    </div>
+    </div>     
     <footer>
         <p><i class="fas fa-copyright fa-lg"></i> 2024 Maxine's Home. All rights reserved.</p>
     </footer>
 </body>
+<script src="grabstatus.js"></script>
 </html>
