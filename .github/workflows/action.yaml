@@ -19,6 +19,12 @@ jobs:
       - name: Update avatar in index.html
         run: node update-avatar.js
 
+      - name: Revert commit if actions-user
+        run: |
+          if [[ "$(git show -s --format='%ae' HEAD)" == *"actions-user"* ]]; then
+            git reset --hard HEAD^;
+          fi
+
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Action'
