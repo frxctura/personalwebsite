@@ -6,8 +6,7 @@
     <meta content="I'm turning 19" property="og:title" />
     <meta content="https://maxine.has-massive-tiddies.help/countdown" property="og:url" />
     <meta content="My birthday's coming closer" property="og:description" />
-    <meta content="#FF69B4" data-react-helmet="true" name="theme-color" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta content="#5BCEFA" data-react-helmet="true" name="theme-color" />
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
@@ -18,141 +17,328 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Darker, more muted gradient */
-            background: linear-gradient(45deg, #D84C93, #E191B0);
+            background: linear-gradient(45deg, #5BCEFA, #F5A9B8, #5BCEFA, #F5A9B8);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             font-family: "Nunito", serif;
             overflow: hidden;
             font-style: normal;
         }
-        #tsparticles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
         }
+
         #countdown {
             position: relative;
             z-index: 2;
             font-size: 2.5em;
             text-align: center;
-            /* Darker, more transparent background */
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.85);
             padding: 2rem;
             border-radius: 15px;
-            backdrop-filter: blur(5px);
-            animation: wave 4s ease-in-out infinite;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            animation: float 6s ease-in-out infinite;
+            color: #2D2D2D;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            max-width: 80vw;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg) translateZ(0); }
+            50% { transform: translateY(-20px) rotate(1deg) translateZ(20px); }
+            100% { transform: translateY(0px) rotate(0deg) translateZ(0); }
+        }
+
+        .number {
+            display: inline-block;
+            background: linear-gradient(45deg, #5BCEFA, #F5A9B8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            padding: 0 5px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
         #playMusicButton {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #FF69B4;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #5BCEFA, #F5A9B8);
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 25px;
+            font-size: 1.1em;
             cursor: pointer;
             text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: buttonGlow 2s infinite;
         }
+
+        @keyframes buttonGlow {
+            0% { box-shadow: 0 4px 15px rgba(91,206,250,0.2); }
+            50% { box-shadow: 0 4px 25px rgba(245,169,184,0.4); }
+            100% { box-shadow: 0 4px 15px rgba(91,206,250,0.2); }
+        }
+
         #playMusicButton:hover {
-            background-color: #e055a4;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
-        @keyframes wave {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(0.5deg); }
-            75% { transform: translateY(5px) rotate(-0.5deg); }
-        }
+
         .thanks-box {
             margin-top: 20px;
-            font-size: 0.5em;
-            opacity: 0.9;
-            padding: 15px;
-            display: flex; /* Use flexbox */
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
-            text-align: center; /* Center text */
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            font-size: 0.6em;
+            line-height: 1.6;
+            opacity: 0.95;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
         }
+
+        .thanks-box:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
         .thanks-box h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 15px 0;
+            background: linear-gradient(45deg, #5BCEFA, #F5A9B8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1.8em;
+            animation: titleGlow 3s infinite;
         }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 5px rgba(91,206,250,0.5); }
+            50% { text-shadow: 0 0 15px rgba(245,169,184,0.7); }
+            100% { text-shadow: 0 0 5px rgba(91,206,250,0.5); }
+        }
+
         .thanks-box p {
-            margin: 5px 0;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        .thanks-box p:hover {
+            background: rgba(91,206,250,0.1);
+            transform: scale(1.02) translateZ(20px);
+        }
+
+        .thanks-box p::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .hearts-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float-up 4s linear forwards;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1.5s linear forwards;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1) rotate(180deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         .confetti {
             position: absolute;
             z-index: 3;
             width: 15px;
             height: 15px;
             opacity: 0;
+            filter: drop-shadow(0 0 3px rgba(255,255,255,0.3));
         }
-        @keyframes confettiRandom {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
+
         .firework {
             position: absolute;
             z-index: 3;
             pointer-events: none;
         }
+
         .firework-particle {
             position: absolute;
             width: 4px;
             height: 4px;
             border-radius: 50%;
+            filter: drop-shadow(0 0 3px rgba(255,255,255,0.5));
         }
-        @keyframes explode {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(0);
-                opacity: 0;
-            }
+
+        .star {
+            position: absolute;
+            background: white;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: twinkle 1s infinite;
         }
-        @keyframes shoot {
-            0% {
-                transform: scale(0) translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) translateY(-100vh);
-                opacity: 0;
-            }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
     </style>
 </head>
 <body>
-    <div id="tsparticles"></div>
+    <div class="hearts-container"></div>
     <div id="countdown"></div>
     <audio id="backgroundMusic" src="tunes.mp3" loop></audio>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.12.0/tsparticles.bundle.min.js"></script>
 <script>
-    tsParticles.load("tsparticles", {
-        particles: {
-            number: { value: 50 },
-            // Softer particle colors
-            color: { value: ["#E6B325", "#D84C93", "#6CACDE", "#7BC86C"] },
-            shape: { type: ["circle", "star"] },
-            opacity: { value: 0.3 },
-            size: { value: 3 },
-            move: { enable: true, speed: 2 }
+    // Create background stars
+    function createStars() {
+        const starsContainer = document.createElement('div');
+        starsContainer.style.position = 'fixed';
+        starsContainer.style.width = '100%';
+        starsContainer.style.height = '100%';
+        starsContainer.style.zIndex = '1';
+        document.body.appendChild(starsContainer);
+
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDelay = Math.random() * 1 + 's';
+            starsContainer.appendChild(star);
         }
-    });
+    }
+
+    function createSparkle(x, y) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1500);
+    }
+
+    function createFloatingHearts() {
+        const hearts = ['💖', '💝', '💕', '💗', '💓'];
+        const container = document.querySelector('.hearts-container');
+        
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
+            container.appendChild(heart);
+            
+            // Create sparkles around the heart
+            const heartRect = heart.getBoundingClientRect();
+            createSparkle(heartRect.left, heartRect.top);
+            
+            setTimeout(() => heart.remove(), 4000);
+        }, 300);
+    }
+
+    function createRandomSparkles() {
+        setInterval(() => {
+            createSparkle(
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerHeight
+            );
+        }, 200);
+    }
+
+    createStars();
+    createFloatingHearts();
+    createRandomSparkles();
 
     function playMusic() {
-            document.getElementById("backgroundMusic").play();
-            document.getElementById("playMusicButton").style.display = "none"; // Hide button after playing
-        }
+        document.getElementById("backgroundMusic").play();
+        document.getElementById("playMusicButton").style.display = "none";
+    }
 
     function createFirework(x, y) {
         const firework = document.createElement('div');
@@ -160,14 +346,13 @@
         firework.style.left = x + 'px';
         firework.style.top = y + 'px';
 
-        // Softer, more muted colors for fireworks
         const colors = [
-            '#D84C93',  // Darker pink
-            '#E6B325',  // Muted gold
-            '#6CACDE',  // Softer blue
-            '#7BC86C',  // Muted green
-            '#C27BA0',  // Dusty rose
-            '#BE4B7B'   // Deep rose
+            '#5BCEFA',  // Light blue
+            '#F5A9B8',  // Pink
+            '#FFFFFF',  // White
+            '#5BCEFA',  // Light blue
+            '#F5A9B8',  // Pink
+            '#FFFFFF'   // White
         ];
         const particleCount = 50;
 
@@ -197,7 +382,6 @@
             });
             
             firework.appendChild(particle);
-            
             animation.onfinish = () => particle.remove();
         }
         
@@ -206,18 +390,17 @@
     }
 
     function createChaosConfetti() {
-        // Softer colors for confetti
         const colors = [
-            '#D84C93',  // Darker pink
-            '#E6B325',  // Muted gold
-            '#6CACDE',  // Softer blue
-            '#7BC86C',  // Muted green
-            '#C27BA0',  // Dusty rose
-            '#BE4B7B'   // Deep rose
+            '#5BCEFA',  // Light blue
+            '#F5A9B8',  // Pink
+            '#FFFFFF',  // White
+            '#5BCEFA',  // Light blue
+            '#F5A9B8',  // Pink
+            '#FFFFFF'   // White
         ];
         const confettiCount = 150;
 
-        for (let i = 0; i < confettiCount; i++) {
+        for (let i = 0; i  < confettiCount; i++) {
             setTimeout(() => {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
@@ -259,6 +442,10 @@
         createFirework(x, y);
     }
 
+    function formatNumber(num) {
+        return `<span class="number">${num}</span>`;
+    }
+
     var countDownDate = new Date("November 5, 2024 0:00:00 GMT+0100").getTime();
 
     var x = setInterval(function() {
@@ -271,22 +458,22 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("countdown").innerHTML = 
-            `🎈 ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds 🎈`;
+            `🎈 ${formatNumber(days)} days ${formatNumber(hours)} hours ${formatNumber(minutes)} minutes ${formatNumber(seconds)} seconds 🎈`;
 
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("countdown").innerHTML = 
                 `<div>
-                    🎉 <b> HAPPY BIRTHDAY MAXINE! </b> 🎂
+                    🎉 <b style="background: linear-gradient(45deg, #5BCEFA, #F5A9B8); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 1.2em;"> HAPPY BIRTHDAY MAXINE! </b> 🎂
                 </div>
                 <div class="thanks-box">
-                    <h3>Special Thanks To</h3>
+                    <h3>SPECIAL THANKS TO</h3>
                     <p>Remi - for being a good friend and helping me through tough times with your stupid humor</p>
                     <p>Cesar - for being probably the best friend I've had the past 6 years</p>
                     <p>All my coworkers! You guys are awesome!</p>
                     <p>And everyone else who's stood by my side and supported me throughout it all <3</p>
                     <button id="playMusicButton" onclick="playMusic()">🎶 Play Birthday Music 🎶</button>
-                    </div>`;
+                </div>`;
             
             createChaosConfetti();
             createRandomFirework();
