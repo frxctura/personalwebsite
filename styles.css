@@ -486,30 +486,126 @@ footer {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .discord-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .discord-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .discord-status-indicator {
+        justify-content: center;
+    }
+    
+    .activity-content {
+        flex-direction: column;
+    }
+    
+    .activity-image {
+        width: 50px;
+        height: 50px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .activity-info {
+        text-align: center;
+    }
+    
+    .activity-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav {
-        gap: 15px;
+        gap: 10px; /* Further reduced from 15px */
+        flex-wrap: wrap; /* Allow items to wrap on very small screens */
+        justify-content: center;
     }
     
     nav a {
-        font-size: 16px;
-        padding: 6px 12px;
+        font-size: 14px; /* Smaller font size */
+        padding: 5px 8px; /* Smaller padding */
     }
     
-    .cards {
-        grid-template-columns: 1fr;
+    .profile {
+        padding: 0 10px; /* Add padding to prevent overflow */
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Smaller heading */
     }
     
-    .tagline {
-        font-size: 1rem;
+    .tagline, .subtitle {
+        font-size: 0.9rem; /* Smaller text */
+        padding: 0 10px;
     }
     
+    .skills {
+        gap: 15px; /* Reduced gap */
+    }
+
     .skill-icon {
-        width: 50px;
-        height: 50px;
+        width: 45px; /* Smaller skill icons */
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    /* Adjust footer for mobile */
+    footer {
+        padding: 10px 0;
+    }
+    
+    /* Fix content overflow */
+    .container {
+        padding: 0 15px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Smaller status card on mobile */
+    .status-card {
+        padding: 15px;
+    }
+    
+    /* Adjust Spotify status for mobile */
+    .spotify-status {
+        flex-direction: column;
+    }
+    
+    .spotify-img {
+        width: 100%;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Make sure notice doesn't overlap with content */
+    .notice {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    nav {
+        padding: 0 5px;
+    }
+    
+    nav a {
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+    
+    .profile-img {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -626,4 +722,216 @@ text-decoration: none;
 
 a, a:visited, a:hover, a:active {
     color: inherit;
+}
+
+/* Discord Profile Card */
+.discord-profile {
+    margin-bottom: 30px;
+}
+
+.discord-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.discord-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.discord-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discord-user-info {
+    flex: 1;
+}
+
+.discord-username {
+    font-size: 1.6rem;
+    margin: 0 0 5px 0;
+}
+
+.discord-id {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.discord-status-indicator {
+    display: flex;
+    align-items: center;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-online {
+    background-color: #43b581;
+}
+
+.status-idle {
+    background-color: #faa61a;
+}
+
+.status-dnd {
+    background-color: #f04747;
+}
+
+.status-offline {
+    background-color: #747f8d;
+}
+
+/* Activities section */
+.activities-section {
+    margin-top: 30px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activity-card {
+    background-color: rgba(35, 35, 35, 0.5);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    background-color: rgba(45, 45, 45, 0.7);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.activity-type {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.activity-time {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.activity-content {
+    display: flex;
+    align-items: center;
+}
+
+.activity-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.activity-small-image {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: -5px;
+    right: -5px;
+    background-color: #222;
+    border: 2px solid #222;
+}
+
+.activity-image img, .activity-small-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-info {
+    flex: 1;
+}
+
+.activity-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.activity-details, .activity-state {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.activity-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.activity-button {
+    background-color: rgba(108, 99, 255, 0.2);
+    color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activity-button:hover {
+    background-color: rgba(108, 99, 255, 0.3);
+}
+
+/* Custom status styling */
+.custom-status {
+    background-color: rgba(35, 35, 35, 0.3);
+}
+
+.custom-emoji {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.emoji {
+    margin-right: 5px;
+}
+
+/* Loading and error states */
+.loading-activities, .no-activities, .error-message {
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+}
+
+.error-message {
+    color: tomato;
 }
