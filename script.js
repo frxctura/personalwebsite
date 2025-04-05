@@ -10,8 +10,8 @@ function loadPage(page) {
                     </div>
                     <div class="profile-content">
                         <h1>Hey, I'm Maxine</h1>
-                        <p class="tagline">a full-stack developer living and working in Germany </p>
-                        <p class="subtitle">This sites main purpose is to link to some projects & to some socials.</p>
+                        <h2 class="tagline">a full-stack developer living and working in Germany </h2>
+                        <h3 class="subtitle">This sites main purpose is to link to some projects & to some socials.</h3>
                         
                         <div class="skills-section">
                             <h3 class="skills-title">Technologies I work with</h3>

@@ -36,10 +36,9 @@ header {
     padding: 20px 0;
     position: sticky;
     top: 0;
-    backdrop-filter: blur(10px);
     background-color: var(--header-bg);
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
 }
 
 nav {
