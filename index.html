@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="Maxine's Home">
-  <meta property="og:description" content="Welcome to my humble home.">
-  <meta property="og:image" content="https://cdn.discordapp.com/avatars/468465290531962900/5e1a4dbec63f6e46827195e878b02f6b">
-  <meta property="og:url" content="https://maxine.has-massive-tiddies.help/">
-  <meta property="og:type" content="website">
-  <!-- Standard Meta Tags -->
-  <meta name="description" content="Welcome to my humble home.">
-  <meta name="keywords" content="Maxine's Home">
-  <meta name="author" content="Maxine">
-  <meta name="robots" content="index, follow">
-  <!-- Viewport for responsive design -->
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-  <!-- Fonts and Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <title>Maxine's Home</title>
-  <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="index.css">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Maxine's Home">
+    <meta property="og:description" content="Welcome to my humble home.">
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/468465290531962900/5e1a4dbec63f6e46827195e878b02f6b">
+    <meta property="og:url" content="https://estrogen.men/">
+    <meta property="og:type" content="website">
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="Welcome to my humble home.">
+    <meta name="keywords" content="Maxine's Home">
+    <meta name="author" content="Maxine">
+    <meta name="robots" content="index, follow">
+    <!-- Viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <title>Maxine's Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/04c5cc98c2.js" crossorigin="anonymous"></script>
 </head>
+<body onload="loadPage('main')">
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" onclick="loadPage('main')">
+                    <i class="fas fa-home icon"></i>
+                    home
+                </a>
+                <a href="#" onclick="loadPage('projects')">
+                    <i class="fas fa-folder icon"></i>
+                    projects
+                </a>
+                <a href="#" onclick="loadPage('links')">
+                    <i class="fas fa-link icon"></i>
+                    links
+                </a>
+                <a href="#" onclick="loadPage('status')">
+                    <i class="fas fa-info-circle icon"></i>
+                    status
+                </a>
+            </nav>
+        </div>
+    </header>
 
-<body scroll="no">
-  <div class="nav">
-    <div class="nav-item">
-      <a href="/">Home</a>
-    </div>
-    <div class="nav-item">
-      <a href="/projects/">Projects</a>
-    </div>
-    <div class="nav-item">
-      <a href="/socials/">Socials</a>
-    </div>
-    <div class="nav-item">
-      <a href="/discordstatus/">Discord Status</a>
-    </div>
-  </div>
-  <div class="avatar-container">
-    <img src="https://avatars.githubusercontent.com/u/69131569?s=144&u=612587c270a0d369f9fd8ac00797ad492297c9b1&v=4"
-      alt="Avatar" class="avatar" id="profileAvatar">
-  </div>
-  <div class="content">
-    <h1 id="one">Welcome!</h1>
-    <p id="two"> I'm Maxine, a full-stack developer living and working in Germany </p>
-    <p id="three"> This sites main purpose is to link to some projects & to some socials.</p>
-    <h5 id="four">Font used: Jetbrains Mono</h5>
-    <h5 id="listeningTo">Currently listening to nothing</h5>
-    <button id="changeScheme">Switch Colorscheme</button>
-  </div>
-  <footer>
-    <p><i class="fas fa-copyright fa-lg"></i> 2024 Maxine's Home. All rights reserved.</p>
-  </footer>
+    <main>
+        <div class="container" id="currentPageContent">
+            <!-- Content will be loaded dynamically -->
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
-<script src="currentlylistening.js"></script>
-<script src="switch-colorscheme.js"></script>
-<script>
-  fetch("https://api.lanyard.rest/v1/users/468465290531962900")
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        const userId = data.data.discord_user.id;
-        const avatarHash = data.data.discord_user.avatar;
-        const avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}`;
-        const avatarImage = document.getElementById('profileAvatar');
-        avatarImage.src = avatarUrl;
-      } else {
-        console.error("Error fetching avatar data.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching from Lanyard API:", error);
-    });
-</script>
-
 </html>
