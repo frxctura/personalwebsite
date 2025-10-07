@@ -2,69 +2,41 @@
 <html lang="en">
 <head>
     <title>[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA</title>
-    <!-- Primary Meta Tags -->
     <meta charset="UTF-8">
-    <title>[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA</title>
     <meta name="description" content="FRXCTURA presents MAXINE.BIRTHDAY.V20 — preloaded, DRM-free, stable, and fully QA tested. Release 05/11/2025. Experience 20 years of life XP.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://estrogen.men/release">
-    <meta property="og:title" content="MAXINE.BIRTHDAY.V20-FRXCTURA">
-    <meta property="og:description" content="MAXINE v20, DRM-free, preloaded, and fully QA tested. Release date: 05/11/2025.">
-    <meta property="og:image" content="https://estrogen.men/assets/banner.png">
-    <meta property="og:image:alt" content="FRXCTURA ASCII logo">
-    <meta property="og:site_name" content="FRXCTURA">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://estrogen.men/release">
-    <meta name="twitter:title" content="MAXINE.BIRTHDAY.V20-FRXCTURA">
-    <meta name="twitter:description" content="MAXINE v20, DRM-free, preloaded, and fully QA tested. Release date: 05/11/2025.">
-    <meta name="twitter:image" content="https://estrogen.men/assets/banner.png">
-    <meta name="twitter:image:alt" content="FRXCTURA ASCII logo">
-    <meta name="twitter:site" content="@FRXCTURA">
-    <meta name="twitter:creator" content="@FRXCTURA">
     <style>
-        @font-face {
-            font-family: 'DOS';
-            src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             cursor: default;
-            -webkit-font-smoothing: none;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #000;
-        color: #b0b0b0;
-        font-family: 'Courier New', monospace;
-        font-size: 14px;
-        line-height: 1.3;
-        margin: 0;
-        min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            color: #b0b0b0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+            min-height: 100vh;
         }
 
         .terminal {
-        background: #0a0a0a;
-        width: min(100ch, 95%);
-        min-height: 100vh; 
-        padding: 2ch;
-        white-space: pre;
-        border-left: 1px solid #1a1a1a;
-        border-right: 1px solid #1a1a1a;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+            background: #0a0a0a;
+            width: min(100ch, 95%);
+            min-height: 100vh; 
+            padding: 2ch;
+            white-space: pre;
+            border-left: 1px solid #1a1a1a;
+            border-right: 1px solid #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .ascii-logo {
@@ -77,7 +49,6 @@
         .section {
             color: #909090;
             margin: 1.5em 0;
-            align-items: center;
         }
 
         .header {
@@ -89,46 +60,10 @@
             margin: 1em 0;
         }
 
-        .info-block {
-            color: #a0a0a0;
-            padding-left: 4ch;
-        }
-
         .bright { color: #f0f0f0; }
         .dim { color: #606060; }
-
-        .container {
-            text-align: centerlef;
-            margin: 2em 0;
-            padding: 1em 0;
-        }
-
-        .countdown-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2ch;
-            margin: 0.5em 0;
-        }
-
-        .countdown-item {
-            text-align: center;
-            min-width: 6ch;
-        }
-
-        .countdown-value {
-            font-size: 24px;
-            color: #ffffff;
-            font-weight: bold;
-            display: block;
-            text-shadow: 1px 1px 0 #404040;
-        }
-
-        .countdown-label {
-            font-size: 10px;
-            color: #808080;
-            margin-top: 0.em;
-        }
+        .grey { color: #c0c0c0; }
+        .darkgrey { color: #808080; }
 
         .scene-sig {
             text-align: center;
@@ -172,12 +107,10 @@
             100% { transform: translateY(100vh); }
         }
 
-        .glow { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
-
-        @media (max-width: 768px) {
-            body { font-size: 10px; }
-            .terminal { width: 100%; padding: 1ch; }
-            .countdown-value { font-size: 18px; }
+        #command-output {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1em;
         }
     </style>
 </head>
@@ -290,13 +223,23 @@
 █        <span class="bright">FRXCTURA - Ripping since 2005</span>        █
 █                                             █
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+psst.. press<span class="bright"> ENTER</span>
+</pre>
 
-<span class="terminal-prompt">C:\FRXCTURA></span>
+<div id="command-output" style="display:none; color: #909090; white-space: pre; max-height: 400px; overflow-y: auto;"></div>
+
+<pre style="margin-top: 1em;">
+<span class="terminal-prompt" id="prompt-line">C:\FRXCTURA><span id="user-input"></span></span>
 </pre>
 </div>
 
 <script>
     const releaseDate = new Date("November 5, 2025 00:00:00 GMT+0100").getTime();
+    let terminalActive = false;
+    let currentInput = "";
+    let commandHistory = [];
+    let historyIndex = -1;
+    let secretsFound = [];
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -326,11 +269,307 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    document.addEventListener('keypress', e => {
-        if (e.key === ' ') {
+    const asciiArt = [
+        `⢸⠂⠀⠀⠀⠘⣧⠀⠀⣟⠛⠲⢤⡀⠀⠀⣰⠏⠀⠀⠀⠀⠀⢹⡀
+⠀⡿⠀⠀⠀⠀⠀⠈⢷⡀⢻⡀⠀⠀⠙⢦⣰⠏⠀⠀⠀⠀⠀⠀⢸⠀
+⠀⡇⠀⠀⠀⠀⠀⠀⢀⣻⠞⠛⠀⠀⠀⠀⠻⠀⠀⠀⠀⠀⠀⠀⢸⠀
+⠀⡇⠀⠀⠀⠀⠀⠀⠛⠓⠒⠓⠓⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀
+⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀
+⠀⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⠀⠀⢀⡟⠀
+⠀⠘⣇⠀⠘⣿⠋⢹⠛⣿⡇⠀⠀⠀⠀⣿⣿⡇⠀⢳⠉⠀⣠⡾⠁⠀
+⣦⣤⣽⣆⢀⡇⠀⢸⡇⣾⡇⠀⠀⠀⠀⣿⣿⡷⠀⢸⡇⠐⠛⠛⣿⠀
+⠹⣦⠀⠀⠸⡇⠀⠸⣿⡿⠁⢀⡀⠀⠀⠿⠿⠃⠀⢸⠇⠀⢀⡾⠁⠀
+⠀⠈⡿⢠⢶⣡⡄⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⣴⣧⠆⠀⢻⡄⠀⠀
+⠀⢸⠃⠀⠘⠉⠀⠀⠀⠠⣄⡴⠲⠶⠴⠃⠀⠀⠀⠉⡀⠀⠀⢻⡄⠀
+⠀⠘⠒⠒⠻⢦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠞⠛⠒⠛⠋⠁⠀
+⠀⠀⠀⠀⠀⠀⠸⣟⠓⠒⠂⠀⠀⠀⠀⠀⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⣦⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⣃⡀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠉⣹⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀`
+    ];
+
+    const fortunes = [
+        "System update complete.",
+        "All processes running normally.",
+        "Check your logs for warnings.",
+        "Disk space usage: optimal.",
+        "Security check: passed.",
+        "No anomalies detected.",
+    ];
+
+    const commands = {
+        help: () => {
+            return `<span class="bright">════════════════════════════════════</span>
+<span class="bright">AVAILABLE COMMANDS</span>
+<span class="bright">════════════════════════════════════</span>
+<span class="bright">help</span>      - Show this help message
+<span class="bright">clear</span>     - Clear terminal output
+<span class="bright">exit</span>      - Deactivate terminal
+<span class="bright">matrix</span>    - Classic Matrix rain effect
+<span class="bright">invert</span>    - Invert colors
+<span class="bright">scan</span>      - CRT monitor scanlines & flicker
+<span class="bright">ascii</span>     - Random ASCII art
+<span class="bright">fortune</span>   - Random system message
+<span class="bright">hack</span>      - Fake hacking animation
+<span class="bright">system</span>    - Browser & system info`;;
+        },
+
+
+        system: () => {
+            const info = {
+                browser: navigator.userAgent.split(' ').pop().split('/')[0],
+                platform: navigator.platform,
+                language: navigator.language,
+                online: navigator.onLine ? 'Connected' : 'Offline',
+                screen: `${window.screen.width}x${window.screen.height}`,
+                viewport: `${window.innerWidth}x${window.innerHeight}`,
+            };
+
+            return `<span class="bright">════════════════════════════════════</span>
+<span class="bright">SYSTEM INFORMATION</span>
+<span class="bright">════════════════════════════════════</span>
+
+  Browser:    <span class="cyan">${info.browser}</span>
+  Platform:   <span class="cyan">${info.platform}</span>
+  Language:   <span class="cyan">${info.language}</span>
+  Status:     <span class="green">${info.online}</span>
+  Screen:     <span class="cyan">${info.screen}</span>
+  Viewport:   <span class="cyan">${info.viewport}</span>
+  Cookies:    <span class="yellow">${navigator.cookieEnabled ? 'Enabled' : 'Disabled'}</span>
+  Time:       <span class="cyan">${new Date().toLocaleTimeString()}</span>`;
+        },
+
+        matrix: () => {
+            if (document.getElementById('matrix-canvas')) return null;
+
+            const canvas = document.createElement('canvas');
+            canvas.id = 'matrix-canvas';
+            canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.15';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0f0';
+                ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                }
+            }
+
+            canvas.dataset.interval = setInterval(draw, 33);
+            return '<span class="green">[OK]</span> Matrix rain activated.';
+        },
+
+        invert: () => {
             document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'none' : 'invert(1)';
+            return '<span class="green">[OK]</span> Color inversion toggled.';
+        },
+
+        scan: () => {
+            if (document.getElementById('scan-style')) return null;
+
+            const style = document.createElement('style');
+            style.id = 'scan-style';
+            style.textContent = `
+            body::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+                pointer-events: none;
+                z-index: 99;
+                animation: flicker 0.15s infinite;
+            }
+            .terminal {
+                box-shadow: 0 0 100px rgba(0, 255, 0, 0.1) inset;
+                border-radius: 10px;
+            }
+        `;
+            document.head.appendChild(style);
+            return '<span class="green">[OK]</span> Scanlines enabled.';
+        },
+
+        ascii: () => {
+            const art = asciiArt[Math.floor(Math.random() * asciiArt.length)];
+            return `<span class="cyan">${art}</span>`;
+        },
+
+        fortune: () => {
+            const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            return `<span class="yellow">${fortune}</span>`;
+        },
+
+        hack: () => {
+            const lines = [
+                '<span class="green">[+]</span> Connecting to server...',
+                '<span class="green">[+]</span> Authenticating credentials...',
+                '<span class="yellow">[*]</span> Fetching data...',
+                '<span class="green">[+]</span> Processing information...',
+                '<span class="bright">[✓]</span> Task complete.',
+            ];
+
+            let output = '';
+            lines.forEach((line, i) => {
+                setTimeout(() => {
+                    const hackOutput = document.getElementById('command-output');
+                    const div = document.createElement('div');
+                    div.innerHTML = line;
+                    hackOutput.appendChild(div);
+                    hackOutput.scrollTop = hackOutput.scrollHeight;
+                }, i * 300);
+            });
+
+            return '<span class="cyan">Initiating hack sequence...</span>';
+        },
+
+        clear: () => {
+            const output = document.getElementById('command-output');
+            output.innerHTML = '';
+            output.style.display = 'none';
+            return null;
+        },
+
+        exit: () => {
+            terminalActive = false;
+            currentInput = "";
+            document.getElementById('user-input').textContent = '';
+            document.getElementById('prompt-line').classList.remove('bright');
+            const output = document.getElementById('command-output');
+            const exitMsg = document.createElement('div');
+            exitMsg.innerHTML = '<span class="bright">[OK]</span> Terminal deactivated. Press ENTER to reactivate.';
+            output.appendChild(exitMsg);
+            setTimeout(() => output.style.display = 'none', 2000);
+            return null;
+        }
+    };
+
+    // Command execution (multi-word handled)
+    function executeCommand(cmd) {
+        const trimmed = cmd.trim().toLowerCase();
+        if (!trimmed) return;
+
+        commandHistory.unshift(cmd);
+        if (commandHistory.length > 20) commandHistory.pop();
+        historyIndex = -1;
+
+        const output = document.getElementById('command-output');
+        output.style.display = 'block';
+
+        const commandLine = document.createElement('div');
+        commandLine.innerHTML = `<span class="dim">C:\\FRXCTURA></span> <span class="bright">${cmd}</span>`;
+        output.appendChild(commandLine);
+
+        const parts = trimmed.split(' ');
+        let combinedResult = '';
+
+        for (const part of parts) {
+            if (commands[part]) {
+                // Toggleable commands check
+                if (part === 'matrix' && document.getElementById('matrix-canvas')) {
+                    clearInterval(parseInt(document.getElementById('matrix-canvas').dataset.interval));
+                    document.getElementById('matrix-canvas').remove();
+                    combinedResult += '<span class="bright">[OK]</span> Matrix rain deactivated.\n\n';
+                    continue;
+                }
+                if (part === 'glitch' && document.getElementById('glitch-style')) {
+                    document.getElementById('glitch-style').remove();
+                    combinedResult += '<span class="green">[OK]</span> Glitch effect disabled.\n\n';
+                    continue;
+                }
+                if (part === 'scan' && document.getElementById('scan-style')) {
+                    document.getElementById('scan-style').remove();
+                    combinedResult += '<span class="green">[OK]</span> Scanlines disabled.\n\n';
+                    continue;
+                }
+
+                const result = commands[part]();
+                if (result) combinedResult += result + '\n\n';
+            } else {
+                combinedResult += `<span class="dim">[ERROR]</span> '${part}' is not recognized.\n\n`;
+            }
+        }
+
+        const resultDiv = document.createElement('div');
+        resultDiv.innerHTML = combinedResult;
+        output.appendChild(resultDiv);
+        output.scrollTop = output.scrollHeight;
+    }
+
+    // Terminal input handling
+    document.addEventListener('keydown', e => {
+        if (!terminalActive && e.key === 'Enter') {
+            terminalActive = true;
+            document.getElementById('prompt-line').classList.add('bright');
+            const output = document.getElementById('command-output');
+            output.style.display = 'block';
+            output.innerHTML = `<span class="bright">════════════════════════════════════</span>
+<span class="bright">[SYSTEM]</span> Terminal activated.
+<span class="bright">════════════════════════════════════</span>
+
+Welcome to the FRXCTURA terminal interface.
+Type "<span class="bright">help</span>" for available commands.
+`;
+            return;
+        }
+
+        if (!terminalActive) return;
+
+        if (e.key === 'Enter') {
+            executeCommand(currentInput);
+            currentInput = "";
+            document.getElementById('user-input').textContent = '';
+        } else if (e.key === 'Backspace') {
+            e.preventDefault();
+            currentInput = currentInput.slice(0, -1);
+            document.getElementById('user-input').textContent = currentInput;
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                currentInput = commandHistory[historyIndex];
+                document.getElementById('user-input').textContent = currentInput;
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex > 0) {
+                historyIndex--;
+                currentInput = commandHistory[historyIndex];
+                document.getElementById('user-input').textContent = currentInput;
+            } else if (historyIndex === 0) {
+                historyIndex = -1;
+                currentInput = '';
+                document.getElementById('user-input').textContent = '';
+            }
+        } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            currentInput += e.key;
+            document.getElementById('user-input').textContent = currentInput;
         }
     });
 </script>
 </body>
+
 </html>
