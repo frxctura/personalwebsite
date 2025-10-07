@@ -1,680 +1,336 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>🎉 Maxine's Birthday Countdown 🎂</title>
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/69131569?s=144&u=612587c270a0d369f9fd8ac00797ad492297c9b1&v=4">
-    <meta content="I'm turning 20" property="og:title" />
-    <meta content="https://maxine.has-massive-tiddies.help/countdown" property="og:url" />
-    <meta content="the" property="og:description" />
-    <meta content="#5BCEFA" data-react-helmet="true" name="theme-color" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+    <title>[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA</title>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <title>[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA</title>
+    <meta name="description" content="FRXCTURA presents MAXINE.BIRTHDAY.V20 — preloaded, DRM-free, stable, and fully QA tested. Release 05/11/2025. Experience 20 years of life XP.">
 
-        :root {
-            --bg-color: rgba(12, 12, 12, 0);
-            --text-color: #f8f8f8;
-            --accent-color: #5BCEFA;
-            --secondary-accent: #F5A9B8;
-            --tertiary-accent: #FFFFFF;
-            --card-bg: rgba(29, 29, 29, 0.3);
-            --card-hover: rgba(40, 40, 40, 0.6);
-            --gradient-1: linear-gradient(135deg, #5BCEFA 0%, #F5A9B8 100%);
-            --gradient-2: linear-gradient(135deg, #F5A9B8 0%, #5BCEFA 100%);
-            --gradient-3: linear-gradient(135deg, #FFFFFF 0%, #5BCEFA 50%, #F5A9B8 100%);
-            --glow-color: rgba(91, 206, 250, 0.4);
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estrogen.men/release">
+    <meta property="og:title" content="[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA">
+    <meta property="og:description" content="FRXCTURA internal release: MAXINE v20, DRM-free, preloaded, and fully QA tested. Release date: 05/11/2025.">
+    <meta property="og:image" content="https://estrogen.men/assets/banner.png">
+    <meta property="og:image:alt" content="FRXCTURA ASCII logo">
+    <meta property="og:site_name" content="FRXCTURA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://estrogen.men/release">
+    <meta name="twitter:title" content="[FRXCTURA] MAXINE.BIRTHDAY.V20-FRXCTURA">
+    <meta name="twitter:description" content="FRXCTURA internal release: MAXINE v20, DRM-free, preloaded, and fully QA tested. Release date: 05/11/2025.">
+    <meta name="twitter:image" content="https://estrogen.men/assets/banner.png">
+    <meta name="twitter:image:alt" content="FRXCTURA ASCII logo">
+    <meta name="twitter:site" content="@FRXCTURA">
+    <meta name="twitter:creator" content="@FRXCTURA">
+    <style>
+        @font-face {
+            font-family: 'DOS';
+            src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            cursor: default;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--text-color);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        color: #b0b0b0;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.3;
+        margin: 0;
+        min-height: 100vh;
+        }
+
+        .terminal {
+        background: #0a0a0a;
+        width: min(100ch, 95%);
+        min-height: 100vh; 
+        padding: 2ch;
+        white-space: pre;
+        border-left: 1px solid #1a1a1a;
+        border-right: 1px solid #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .ascii-logo {
+            color: #d0d0d0;
+            text-align: center;
+            margin-bottom: 2em;
+            line-height: 1;
+        }
+
+        .section {
+            color: #909090;
+            margin: 1.5em 0;
+            align-items: center;
+        }
+
+        .header {
+            color: #e0e0e0;
+            text-align: center;
+            border-top: 1px solid #404040;
+            border-bottom: 1px solid #404040;
+            padding: 0.5em 0;
+            margin: 1em 0;
+        }
+
+        .info-block {
+            color: #a0a0a0;
+            padding-left: 4ch;
+        }
+
+        .bright { color: #f0f0f0; }
+        .dim { color: #606060; }
+
+        .container {
+            text-align: centerlef;
+            margin: 2em 0;
+            padding: 1em 0;
+        }
+
+        .countdown-row {
             display: flex;
             justify-content: center;
-            align-items: center;
-            font-style: normal;
+            flex-wrap: wrap;
+            gap: 2ch;
+            margin: 0.5em 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: 6ch;
+        }
+
+        .countdown-value {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: bold;
+            display: block;
+            text-shadow: 1px 1px 0 #404040;
+        }
+
+        .countdown-label {
+            font-size: 10px;
+            color: #808080;
+            margin-top: 0.em;
+        }
+
+        .scene-sig {
+            text-align: center;
+            color: #505050;
+            margin-top: 2em;
+            font-size: 10px;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .blink { animation: blink 1s infinite; }
+
+        .terminal-prompt {
+            color: #808080;
+        }
+
+        .terminal-prompt::after {
+            content: "█";
+            animation: blink 1s infinite;
+            color: #606060;
         }
 
         body::before {
-            content: '';
+            content: "";
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.03), transparent);
+            animation: scanline 8s linear infinite;
             pointer-events: none;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 80%, rgba(91, 206, 250, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(245, 169, 184, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            z-index: 100;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50% }
-            50% { background-position: 100% 50% }
-            100% { background-position: 0% 50% }
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
         }
 
-        /* Animated particles background */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            opacity: 0.6;
-        }
+        .glow { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
 
-        .particle {
-            position: absolute;
-            background: var(--accent-color);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .particle:nth-child(1) { width: 3px; height: 3px; top: 20%; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { width: 2px; height: 2px; top: 60%; left: 20%; animation-delay: 2s; }
-        .particle:nth-child(3) { width: 4px; height: 4px; top: 40%; left: 80%; animation-delay: 4s; }
-        .particle:nth-child(4) { width: 2px; height: 2px; top: 80%; left: 60%; animation-delay: 1s; }
-        .particle:nth-child(5) { width: 3px; height: 3px; top: 30%; left: 90%; animation-delay: 3s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
-        }
-
-        #countdown {
-            position: relative;
-            z-index: 2;
-            font-size: 2.5em;
-            text-align: center;
-            background: rgba(29, 29, 29, 0.3);
-            backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
-                        0 0 50px rgba(91, 206, 250, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: profilePulse 4s ease-in-out infinite;
-            color: var(--text-color);
-            max-width: 80vw;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #countdown::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(91, 206, 250, 0.1), rgba(245, 169, 184, 0.1));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        #countdown:hover::before {
-            opacity: 1;
-        }
-
-        @keyframes profilePulse {
-            0%, 100% { transform: scale(1) translateZ(0); }
-            50% { transform: scale(1.02) translateZ(20px); }
-        }
-
-        .number {
-            display: inline-block;
-            background: linear-gradient(135deg, #fff, #5BCEFA, #F5A9B8);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease infinite;
-            font-weight: 700;
-            padding: 0 5px;
-            text-shadow: 0 0 30px rgba(91, 206, 250, 0.3);
-            position: relative;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .number:hover {
-            animation: pulse 0.6s ease;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(2deg); }
-            100% { transform: scale(1) rotate(0deg); }
-        }
-
-        #playMusicButton {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 28px;
-            background: var(--gradient-1);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 8px 32px rgba(91, 206, 250, 0.3);
-            animation: buttonGlow 2s infinite;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #playMusicButton::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        #playMusicButton:hover::before {
-            left: 100%;
-        }
-
-        @keyframes buttonGlow {
-            0% { box-shadow: 0 8px 32px rgba(91,206,250,0.3); }
-            50% { box-shadow: 0 12px 40px rgba(245,169,184,0.4); }
-            100% { box-shadow: 0 8px 32px rgba(91,206,250,0.3); }
-        }
-
-        #playMusicButton:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(91, 206, 250, 0.4);
-        }
-
-        .thanks-box {
-            margin-top: 30px;
-            font-size: 0.6em;
-            line-height: 1.6;
-            opacity: 0.95;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: rgba(29, 29, 29, 0.4);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            transform-style: preserve-3d;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .thanks-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(91, 206, 250, 0.1), rgba(245, 169, 184, 0.1));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .thanks-box:hover::before {
-            opacity: 1;
-        }
-
-        .thanks-box:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
-                        0 0 50px rgba(91, 206, 250, 0.2);
-            border-color: rgba(91, 206, 250, 0.3);
-        }
-
-        .thanks-box h3 {
-            margin: 0 0 20px 0;
-            background: linear-gradient(135deg, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.8em;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .thanks-box h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-1);
-            border-radius: 2px;
-        }
-
-        .thanks-box p {
-            margin: 10px 0;
-            padding: 15px 20px;
-            border-radius: 12px;
-            background: rgba(29, 29, 29, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-            color: #ccc;
-        }
-
-        .thanks-box p::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .thanks-box p:hover::before {
-            left: 100%;
-        }
-
-        .thanks-box p:hover {
-            background: rgba(91, 206, 250, 0.1);
-            transform: scale(1.02) translateZ(10px);
-            border-color: rgba(91, 206, 250, 0.3);
-            color: #fff;
-        }
-
-        .hearts-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            animation: float-up 4s linear forwards;
-            opacity: 0.6;
-            filter: drop-shadow(0 0 10px rgba(91, 206, 250, 0.5));
-        }
-
-        @keyframes float-up {
-            0% {
-                transform: translateY(100vh) rotate(0deg) scale(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(50vh) rotate(180deg) scale(1.2);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg) scale(1);
-                opacity: 0;
-            }
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background-color: white;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 1.5s linear forwards;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        @keyframes sparkle {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.5) rotate(180deg);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(0) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .confetti {
-            position: absolute;
-            z-index: 3;
-            width: 15px;
-            height: 15px;
-            opacity: 0;
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
-            backdrop-filter: blur(1px);
-        }
-
-        .firework {
-            position: absolute;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .firework-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            animation: twinkle 2s infinite;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
-
-        /* Responsive design */
         @media (max-width: 768px) {
-            #countdown {
-                font-size: 1.8em;
-                padding: 2rem;
-                max-width: 90vw;
-            }
-            
-            .thanks-box {
-                padding: 20px;
-                font-size: 0.7em;
-            }
-            
-            .thanks-box h3 {
-                font-size: 1.5em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #countdown {
-                font-size: 1.4em;
-                padding: 1.5rem;
-                max-width: 95vw;
-            }
-            
-            .thanks-box {
-                padding: 15px;
-                font-size: 0.8em;
-            }
-            
-            .thanks-box h3 {
-                font-size: 1.3em;
-            }
-            
-            #playMusicButton {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
+            body { font-size: 10px; }
+            .terminal { width: 100%; padding: 1ch; }
+            .countdown-value { font-size: 18px; }
         }
     </style>
 </head>
 <body>
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    <div class="hearts-container"></div>
-    <div id="countdown"></div>
-    <audio id="backgroundMusic" src="tunes.mp3" loop></audio>
-</body>
+<div class="terminal">
+<pre class="ascii-logo">
+   ▄████████    ▄████████ ▀████    ▐████▀  ▄████████     ███     ███    █▄     ▄████████    ▄████████ 
+  ███    ███   ███    ███   ███▌   ████▀  ███    ███ ▀█████████▄ ███    ███   ███    ███   ███    ███ 
+  ███    █▀    ███    ███    ███  ▐███    ███    █▀     ▀███▀▀██ ███    ███   ███    ███   ███    ███ 
+ ▄███▄▄▄      ▄███▄▄▄▄██▀    ▀███▄███▀    ███            ███   ▀ ███    ███  ▄███▄▄▄▄██▀   ███    ███ 
+▀▀███▀▀▀     ▀▀███▀▀▀▀▀      ████▀██▄     ███            ███     ███    ███ ▀▀███▀▀▀▀▀   ▀███████████ 
+  ███        ▀███████████   ▐███  ▀███    ███    █▄      ███     ███    ███ ▀███████████   ███    ███ 
+  ███          ███    ███  ▄███     ███▄  ███    ███     ███     ███    ███   ███    ███   ███    ███ 
+  ███          ███    ███ ████       ███▄ ████████▀     ▄████▀   ████████▀    ███    ███   ███    █▀  
+               ███    ███                                                     ███    ███          
+                         ·· 2 0 0 5 ··                          
+</pre>
+
+<div class="header bright">┌────────────────────────────────────────────────────────────────────────┐
+│                   MAXINE.BIRTHDAY.V20.INTERNAL-FRXCTURA                │
+└────────────────────────────────────────────────────────────────────────┘
+</div>
+
+<div class="section">
+<span class="dim">┌─[</span> <span class="bright">RELEASE INFO</span> <span class="dim">]──────────────────────────────────────────────────────┐</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  Release Date : <span class="bright">05/11/2025</span>          Protection  : <span class="bright">None</span><span class="dim">                │</span>
+<span class="dim">│</span>  Type         : <span class="bright">Birthday v2.0</span>       Crack       : <span class="bright">Preloaded</span><span class="dim">           │</span>
+<span class="dim">│</span>  Supplied By  : <span class="bright">FRXCTURA</span>            Packed By   : <span class="bright">Universe</span><span class="dim">            │</span>
+<span class="dim">│</span>  Verified By  : <span class="bright">Existence</span>           Size        : <span class="bright">20 Years</span><span class="dim">            │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">└───────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<div class="section">
+<span class="dim">┌─[</span> <span class="bright">COUNTDOWN TO RELEASE</span> <span class="dim">]──────────────────────────────────────────────┐</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  Release Day    : <span class="bright" id="days">00</span><span class="dim">                                                  │</span>
+<span class="dim">│</span>  Release Hour   : <span class="bright" id="hours">00</span><span class="dim">                                                  │</span>
+<span class="dim">│</span>  Release Minute : <span class="bright" id="minutes">00</span><span class="dim">                                                  │</span>
+<span class="dim">│</span>  Release Second : <span class="bright" id="seconds">00</span><span class="dim">                                                  │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">└───────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<div class="section">
+<span class="dim">┌─[</span> <span class="bright">RELEASE NOTES</span> <span class="dim">]─────────────────────────────────────────────────────┐</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  Another internal drop from FRXCTURA. <span class="dim">                                │</span>
+<span class="dim">│</span>  MAXINE v20 - stable, preloaded, DRM-free. <span class="dim">                           │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  Highlights: <span class="dim">                                                         │</span>
+<span class="dim">│</span>  <span class="bright">-</span> 20 years tracked and compiled <span class="dim">                                     │</span>
+<span class="dim">│</span>  <span class="bright">-</span> Pre-activated <span class="dim">                                                     │</span>
+<span class="dim">│</span>  <span class="bright">-</span> Fully QA tested <span class="dim">                                                   │</span>
+<span class="dim">│</span>  <span class="bright">-</span> All extras included <span class="dim">                                               │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">└───────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<div class="section">
+<span class="dim">┌─[</span> <span class="bright">INSTALL NOTES</span> <span class="dim">]─────────────────────────────────────────────────────┐</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  1. Hold until 05/11/2025 <span class="dim">                                            │</span>
+<span class="dim">│</span>  2. Prepare environment <span class="dim">                                              │</span>
+<span class="dim">│</span>  3. Deploy cake.exe <span class="dim">                                                  │</span>
+<span class="dim">│</span>  4. Execute party.bat <span class="dim">                                                │</span>
+<span class="dim">│</span>  5. Sit back. Enjoy <span class="dim">                                                  │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">│</span>  *Auto-engages 05/11/2025* <span class="dim">                                           │</span>
+<span class="dim">│</span><span class="dim">                                                                       │</span>
+<span class="dim">└───────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<div id="birthday-message" style="display:none;" class="section">
+<span class="bright">
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                         │
+│    ██╗  ██╗ █████╗ ██████╗ ██████╗ ██╗   ██╗    ██████╗  ██████╗ ████████╗██╗  ██╗██╗   │
+│    ██║  ██║██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝    ╚════██╗██╔═████╗╚══██╔══╝██║  ██║██║   │
+│    ███████║███████║██████╔╝██████╔╝ ╚████╔╝      █████╔╝██║██╔██║   ██║   ███████║██║   │
+│    ██╔══██║██╔══██║██╔═══╝ ██╔═══╝   ╚██╔╝      ██╔═══╝ ████╔╝██║   ██║   ██╔══██║╚═╝   │
+│    ██║  ██║██║  ██║██║     ██║        ██║       ███████╗╚██████╔╝   ██║   ██║  ██║██╗   │
+│    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝        ╚═╝       ╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝   │
+│                                                                                         │
+│                                      M A X I N E !                                      │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+</span>
+</div>
+
+<div id="greetings-section" class="section" style="display:none;">
+<span class="dim">┌─[</span> <span class="bright">GREETINGS</span> <span class="dim">]──────────────────────────────────────────────────────────┐</span>
+<span class="dim">│</span><span class="dim">                                                                        │</span>
+<span class="dim">│</span>  Special thanks to:<span class="dim">                                                    │</span>
+<span class="dim">│</span><span class="dim">                                                                        │</span>
+<span class="dim">│</span>  <span class="bright">-</span> That one server with all the fuzzy animals<span class="dim">                          │</span>
+<span class="dim">│</span>  <span class="bright">-</span> The real ones out there<span class="dim">                                             │</span>
+<span class="dim">│</span>  <span class="bright">-</span> Everyone who's stood by me<span class="dim">                                          │</span>
+<span class="dim">│</span>  <span class="bright">-</span> And supported me through it all &lt;3<span class="dim">                                  │</span>
+<span class="dim">│</span><span class="dim">                                                                        │</span>
+<span class="dim">└────────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<pre class="scene-sig dim">
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█                                             █
+█   FRXCTURA ™ <span class="bright">SINCE 2005</span> ™ LOVE <span class="blink">■</span> YOU <span class="blink">■</span> ALL  █
+█                                             █
+█        <span class="bright">FRXCTURA - Ripping since 2005</span>        █
+█                                             █
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+<span class="terminal-prompt">C:\FRXCTURA></span>
+</pre>
+</div>
+
 <script>
-    // Create background stars
-    function createStars() {
-        const starsContainer = document.createElement('div');
-        starsContainer.style.position = 'fixed';
-        starsContainer.style.width = '100%';
-        starsContainer.style.height = '100%';
-        starsContainer.style.zIndex = '1';
-        document.body.appendChild(starsContainer);
+    const releaseDate = new Date("November 5, 2025 00:00:00 GMT+0100").getTime();
 
-        for (let i = 0; i < 50; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.animationDelay = Math.random() * 2 + 's';
-            starsContainer.appendChild(star);
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = releaseDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("birthday-message").style.display = "block";
+            document.getElementById("greetings-section").style.display = "block";
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            return;
         }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, '0');
+        document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
     }
 
-    function createSparkle(x, y) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = x + 'px';
-        sparkle.style.top = y + 'px';
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1500);
-    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-    function createFloatingHearts() {
-        const hearts = ['💖', '💝', '💕', '💗', '💓'];
-        const container = document.querySelector('.hearts-container');
-        
-        setInterval(() => {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.transform = `scale(${0.8 + Math.random() * 0.4})`;
-            container.appendChild(heart);
-            
-            // Create sparkles around the heart
-            setTimeout(() => {
-                const heartRect = heart.getBoundingClientRect();
-                createSparkle(heartRect.left + heartRect.width/2, heartRect.top + heartRect.height/2);
-            }, 100);
-            
-            setTimeout(() => heart.remove(), 4000);
-        }, 400);
-    }
-
-    function createRandomSparkles() {
-        setInterval(() => {
-            createSparkle(
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerHeight
-            );
-        }, 300);
-    }
-
-    createStars();
-    createFloatingHearts();
-    createRandomSparkles();
-
-    function playMusic() {
-        document.getElementById("backgroundMusic").play();
-        document.getElementById("playMusicButton").style.display = "none";
-    }
-
-    function createFirework(x, y) {
-        const firework = document.createElement('div');
-        firework.className = 'firework';
-        firework.style.left = x + 'px';
-        firework.style.top = y + 'px';
-
-        const colors = [
-            '#5BCEFA',  // Light blue
-            '#F5A9B8',  // Pink
-            '#FFFFFF',  // White
-            '#5BCEFA',  // Light blue
-            '#F5A9B8',  // Pink
-            '#FFFFFF'   // White
-        ];
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'firework-particle';
-            const angle = (Math.PI * 2 * i) / particleCount;
-            const velocity = 2 + Math.random() * 3;
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            
-            particle.style.backgroundColor = color;
-            particle.style.boxShadow = `0 0 ${Math.random() * 5 + 3}px ${color}`;
-            
-            const animation = particle.animate([
-                { 
-                    transform: 'translate(0, 0) scale(1)',
-                    opacity: 1 
-                },
-                { 
-                    transform: `translate(${Math.cos(angle) * 100 * velocity}px, 
-                                      ${Math.sin(angle) * 100 * velocity}px) scale(0)`,
-                    opacity: 0 
-                }
-            ], {
-                duration: 1000 + Math.random() * 1000,
-                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-            });
-            
-            firework.appendChild(particle);
-            animation.onfinish = () => particle.remove();
+    document.addEventListener('keypress', e => {
+        if (e.key === ' ') {
+            document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'none' : 'invert(1)';
         }
-        
-        document.body.appendChild(firework);
-        setTimeout(() => firework.remove(), 2000);
-    }
-
-    function createChaosConfetti() {
-        const colors = [
-            '#5BCEFA',  // Light blue
-            '#F5A9B8',  // Pink
-            '#FFFFFF',  // White
-            '#5BCEFA',  // Light blue
-            '#F5A9B8',  // Pink
-            '#FFFFFF'   // White
-        ];
-        const confettiCount = 150;
-
-        for (let i = 0; i < confettiCount; i++) {
-            setTimeout(() => {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
-                
-                confetti.style.left = Math.random() * window.innerWidth + 'px';
-                confetti.style.top = -20 + 'px';
-                
-                const size = 8 + Math.random() * 15;
-                confetti.style.width = size + 'px';
-                confetti.style.height = size + 'px';
-                
-                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                
-                const endX = (Math.random() - 0.5) * window.innerWidth;
-                const endY = window.innerHeight + 100;
-                const rotation = Math.random() * 1440 - 720;
-                
-                const animation = confetti.animate([
-                    { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-                    { 
-                        transform: `translate(${endX}px, ${endY}px) rotate(${rotation}deg)`,
-                        opacity: 0 
-                    }
-                ], {
-                    duration: 2000 + Math.random() * 3000,
-                    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                });
-                
-                document.body.appendChild(confetti);
-                animation.onfinish = () => confetti.remove();
-            }, i * 20);
-        }
-    }
-
-    function createRandomFirework() {
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * (window.innerHeight * 0.6) + (window.innerHeight * 0.2);
-        createFirework(x, y);
-    }
-
-    function formatNumber(num) {
-        return `<span class="number">${num}</span>`;
-    }
-
-    var countDownDate = new Date("November 5, 2025 0:00:00 GMT+0100").getTime();
-
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("countdown").innerHTML = 
-            `🎈 ${formatNumber(days)} days ${formatNumber(hours)} hours ${formatNumber(minutes)} minutes ${formatNumber(seconds)} seconds 🎈`;
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = 
-                `<div>
-                    🎉 <b style="background: linear-gradient(135deg, #fff, #5BCEFA, #F5A9B8); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 1.2em; animation: gradientShift 3s ease infinite;"> HAPPY BIRTHDAY MAXINE! </b> 🎂
-                </div>
-                <div class="thanks-box">
-                    <h3>SPECIAL THANKS TO</h3>
-                    <p>That one server with all the fuzzy animals in it, y'all are awesome</p>
-                    <p>Uh, people I guess</p>
-                    <p>And everyone else who's stood by my side and supported me throughout it all <3</p>
-                    <button id="playMusicButton" onclick="playMusic()">🎶 Play Birthday Music 🎶</button>
-                </div>`;
-            
-            createChaosConfetti();
-            createRandomFirework();
-            
-            setInterval(createChaosConfetti, 3000);
-            setInterval(createRandomFirework, 1500);
-
-            document.getElementById("playMusicButton").style.display = "block";
-        }
-    }, 1000);
+    });
 </script>
+</body>
 </html>
