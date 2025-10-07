@@ -467,7 +467,6 @@ psst.. press<span class="bright"> ENTER</span>
         }
     };
 
-    // Command execution (multi-word handled)
     function executeCommand(cmd) {
         const trimmed = cmd.trim().toLowerCase();
         if (!trimmed) return;
@@ -488,7 +487,6 @@ psst.. press<span class="bright"> ENTER</span>
 
         for (const part of parts) {
             if (commands[part]) {
-                // Toggleable commands check
                 if (part === 'matrix' && document.getElementById('matrix-canvas')) {
                     clearInterval(parseInt(document.getElementById('matrix-canvas').dataset.interval));
                     document.getElementById('matrix-canvas').remove();
