@@ -132,6 +132,30 @@
             overflow-y: auto;
             margin-bottom: 1em;
         }
+
+        #expand-heartfelt {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #808080;
+            cursor: pointer;
+            transition: color 0.2s;
+            text-align: center;
+        }
+
+        #expand-heartfelt:hover {
+            color: #c0c0c0;
+        }
+
+        #heartfelt-container {
+            background: none; 
+            padding: 0; 
+            white-space: pre-wrap;
+            line-height: 1.6;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
@@ -228,11 +252,18 @@
 <span class="dim">│</span>  Special thanks to:<span class="dim">                                                    │</span>
 <span class="dim">│</span><span class="dim">                                                                        │</span>
 <span class="dim">│</span>  <span class="bright">-</span> That one server with all the fuzzy animals<span class="dim">                          │</span>
-<span class="dim">│</span>  <span class="bright">-</span> The real ones out there<span class="dim">                                             │</span>
+<span class="dim">│</span>  <span class="bright">-</span> Vortex, you guys are awesome, and have made my days more than once<span class="dim">  │</span>
 <span class="dim">│</span>  <span class="bright">-</span> Everyone who's stood by me<span class="dim">                                          │</span>
 <span class="dim">│</span>  <span class="bright">-</span> And supported me through it all &lt;3<span class="dim">                                  │</span>
 <span class="dim">│</span><span class="dim">                                                                        │</span>
 <span class="dim">└────────────────────────────────────────────────────────────────────────┘</span>
+</div>
+
+<div id="heartfelt-section" style="display:none; text-align:center;">
+    <p id="expand-heartfelt" class="hover-text">[+] You should read this</p>
+    <div id="heartfelt-container" style="display:none; max-width:600px; white-space:pre-wrap; line-height:1.6; color:#ddd;">
+        <div id="heartfelt-text"></div>
+    </div>
 </div>
 
 <pre class="scene-sig dim">
@@ -300,6 +331,7 @@ psst.. press<span class="bright"> ENTER</span>
         if (distance <= 0) {
             document.getElementById("birthday-message").style.display = "block";
             document.getElementById("greetings-section").style.display = "block";
+            document.getElementById("heartfelt-section").style.display = "block";
             document.getElementById("days").textContent = "00";
             document.getElementById("hours").textContent = "00";
             document.getElementById("minutes").textContent = "00";
@@ -318,9 +350,67 @@ psst.. press<span class="bright"> ENTER</span>
         document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
     }
 
+const heartfeltMessage = `
+This past year has been a ride, full of twists I didn't expect, 
+Times I felt lost, moments when I barely recognized myself 
+But you guys, you've been here, and that's changed everything.
+
+You've shaped me into who I am today  
+Helped me stand taller, breathe easier, and truly appreciate the people around me.
+
+So here's to my 20th birthday  
+Here's to the start of another decade of my life  
+One that I'm excited to step into with all of you alongside me 
+
+Thank you for being my friends, my support, my safe space  
+For standing by me through every high and low 
+I couldn't have made it here without you, and I'm endlessly grateful.
+
+Here's to more adventures, more laughter, more moments where we just exist together
+You've made my world brighter, and I hope I can do the same for you  
+
+I love you all, truly.
+`;
+
+    const expandButton = document.getElementById("expand-heartfelt");
+    const heartfeltContainer = document.getElementById("heartfelt-container");
+    const heartfeltText = document.getElementById("heartfelt-text");
+
+    let typewriterInterval; // global interval for typewriter
+
+
+    function typeWriter(text, element, speed) {
+        let i = 0;
+        element.textContent = ""; // reset
+        clearInterval(typewriterInterval); // cancel any existing typing
+        typewriterInterval = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text[i];
+                i++;
+            } else {
+                clearInterval(typewriterInterval);
+            }
+        }, speed);
+    }
+
+    expandButton.addEventListener("click", () => {
+        const isVisible = heartfeltContainer.style.display === "block";
+        if (isVisible) {
+            heartfeltContainer.style.display = "none";
+            expandButton.textContent = "[+] You should read this";
+            clearInterval(typewriterInterval);
+        } else {
+            heartfeltContainer.style.display = "block";
+            expandButton.textContent = "[-] Hide message";
+            typeWriter(heartfeltMessage, heartfeltText, 25);
+            heartfeltContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    });
+
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // === Terminal + effects ===
     const asciiArt = [
         `⢸⠂⠀⠀⠀⠘⣧⠀⠀⣟⠛⠲⢤⡀⠀⠀⣰⠏⠀⠀⠀⠀⠀⢹⡀
 ⠀⡿⠀⠀⠀⠀⠀⠈⢷⡀⢻⡀⠀⠀⠙⢦⣰⠏⠀⠀⠀⠀⠀⠀⢸⠀
@@ -351,8 +441,7 @@ psst.. press<span class="bright"> ENTER</span>
     ];
 
     const commands = {
-        help: () => {
-            return `<span class="bright">════════════════════════════════════</span>
+        help: () => `<span class="bright">════════════════════════════════════</span>
 <span class="bright">AVAILABLE COMMANDS</span>
 <span class="bright">════════════════════════════════════</span>
 <span class="bright">help</span>      - Show this help message
@@ -364,10 +453,7 @@ psst.. press<span class="bright"> ENTER</span>
 <span class="bright">ascii</span>     - Random ASCII art
 <span class="bright">fortune</span>   - Random system message
 <span class="bright">hack</span>      - Fake hacking animation
-<span class="bright">system</span>    - Browser & system info`;;
-        },
-
-
+<span class="bright">system</span>    - Browser & system info`,
         system: () => {
             const info = {
                 browser: navigator.userAgent.split(' ').pop().split('/')[0],
@@ -377,144 +463,36 @@ psst.. press<span class="bright"> ENTER</span>
                 screen: `${window.screen.width}x${window.screen.height}`,
                 viewport: `${window.innerWidth}x${window.innerHeight}`,
             };
-
             return `<span class="bright">════════════════════════════════════</span>
 <span class="bright">SYSTEM INFORMATION</span>
 <span class="bright">════════════════════════════════════</span>
 
-  Browser:    <span class="cyan">${info.browser}</span>
-  Platform:   <span class="cyan">${info.platform}</span>
-  Language:   <span class="cyan">${info.language}</span>
-  Status:     <span class="green">${info.online}</span>
-  Screen:     <span class="cyan">${info.screen}</span>
-  Viewport:   <span class="cyan">${info.viewport}</span>
-  Cookies:    <span class="yellow">${navigator.cookieEnabled ? 'Enabled' : 'Disabled'}</span>
-  Time:       <span class="cyan">${new Date().toLocaleTimeString()}</span>`;
+Browser: <span class="cyan">${info.browser}</span>
+Platform: <span class="cyan">${info.platform}</span>
+Language: <span class="cyan">${info.language}</span>
+Status: <span class="green">${info.online}</span>
+Screen: <span class="cyan">${info.screen}</span>
+Viewport: <span class="cyan">${info.viewport}</span>
+Cookies: <span class="yellow">${navigator.cookieEnabled ? 'Enabled' : 'Disabled'}</span>
+Time: <span class="cyan">${new Date().toLocaleTimeString()}</span>`;
         },
-
-        matrix: () => {
-            if (document.getElementById('matrix-canvas')) return null;
-
-            const canvas = document.createElement('canvas');
-            canvas.id = 'matrix-canvas';
-            canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.15';
-            document.body.appendChild(canvas);
-
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = Array(Math.floor(columns)).fill(1);
-
-            function draw() {
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#0f0';
-                ctx.font = fontSize + 'px monospace';
-
-                for (let i = 0; i < drops.length; i++) {
-                    const text = chars[Math.floor(Math.random() * chars.length)];
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                    drops[i]++;
-                }
-            }
-
-            canvas.dataset.interval = setInterval(draw, 33);
-            return '<span class="green">[OK]</span> Matrix rain activated.';
-        },
-
-        invert: () => {
-            document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'none' : 'invert(1)';
-            return '<span class="green">[OK]</span> Color inversion toggled.';
-        },
-
-        scan: () => {
-            if (document.getElementById('scan-style')) return null;
-
-            const style = document.createElement('style');
-            style.id = 'scan-style';
-            style.textContent = `
-            body::after {
-                content: "";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: repeating-linear-gradient(
-                    0deg,
-                    rgba(0, 0, 0, 0.15),
-                    rgba(0, 0, 0, 0.15) 1px,
-                    transparent 1px,
-                    transparent 2px
-                );
-                pointer-events: none;
-                z-index: 99;
-                animation: flicker 0.15s infinite;
-            }
-            .terminal {
-                box-shadow: 0 0 100px rgba(0, 255, 0, 0.1) inset;
-                border-radius: 10px;
-            }
-        `;
-            document.head.appendChild(style);
-            return '<span class="green">[OK]</span> Scanlines enabled.';
-        },
-
-        ascii: () => {
-            const art = asciiArt[Math.floor(Math.random() * asciiArt.length)];
-            return `<span class="cyan">${art}</span>`;
-        },
-
-        fortune: () => {
-            const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-            return `<span class="yellow">${fortune}</span>`;
-        },
-
-        hack: () => {
-            const lines = [
-                '<span class="green">[+]</span> Connecting to server...',
-                '<span class="green">[+]</span> Authenticating credentials...',
-                '<span class="yellow">[*]</span> Fetching data...',
-                '<span class="green">[+]</span> Processing information...',
-                '<span class="bright">[✓]</span> Task complete.',
-            ];
-
-            let output = '';
-            lines.forEach((line, i) => {
-                setTimeout(() => {
-                    const hackOutput = document.getElementById('command-output');
-                    const div = document.createElement('div');
-                    div.innerHTML = line;
-                    hackOutput.appendChild(div);
-                    hackOutput.scrollTop = hackOutput.scrollHeight;
-                }, i * 300);
-            });
-
-            return '<span class="cyan">Initiating hack sequence...</span>';
-        },
-
+        ascii: () => `<span class="cyan">${asciiArt[Math.floor(Math.random() * asciiArt.length)]}</span>`,
+        fortune: () => `<span class="yellow">${fortunes[Math.floor(Math.random() * fortunes.length)]}</span>`,
         clear: () => {
-            const output = document.getElementById('command-output');
-            output.innerHTML = '';
-            output.style.display = 'none';
+            const o = document.getElementById('command-output');
+            o.innerHTML = '';
+            o.style.display = 'none';
             return null;
         },
-
         exit: () => {
             terminalActive = false;
-            currentInput = "";
             document.getElementById('user-input').textContent = '';
             document.getElementById('prompt-line').classList.remove('bright');
-            const output = document.getElementById('command-output');
-            const exitMsg = document.createElement('div');
-            exitMsg.innerHTML = '<span class="bright">[OK]</span> Terminal deactivated. Press ENTER to reactivate.';
-            output.appendChild(exitMsg);
-            setTimeout(() => output.style.display = 'none', 2000);
+            const o = document.getElementById('command-output');
+            const d = document.createElement('div');
+            d.innerHTML = '<span class="bright">[OK]</span> Terminal deactivated. Press ENTER to reactivate.';
+            o.appendChild(d);
+            setTimeout(() => o.style.display = 'none', 2000);
             return null;
         }
     };
@@ -522,101 +500,76 @@ psst.. press<span class="bright"> ENTER</span>
     function executeCommand(cmd) {
         const trimmed = cmd.trim().toLowerCase();
         if (!trimmed) return;
-
         commandHistory.unshift(cmd);
         if (commandHistory.length > 20) commandHistory.pop();
         historyIndex = -1;
 
         const output = document.getElementById('command-output');
         output.style.display = 'block';
-
         const commandLine = document.createElement('div');
         commandLine.innerHTML = `<span class="dim">C:\\FRXCTURA></span> <span class="bright">${cmd}</span>`;
         output.appendChild(commandLine);
 
         const parts = trimmed.split(' ');
-        let combinedResult = '';
-
+        let combined = '';
         for (const part of parts) {
-            if (commands[part]) {
-                if (part === 'matrix' && document.getElementById('matrix-canvas')) {
-                    clearInterval(parseInt(document.getElementById('matrix-canvas').dataset.interval));
-                    document.getElementById('matrix-canvas').remove();
-                    combinedResult += '<span class="bright">[OK]</span> Matrix rain deactivated.\n\n';
-                    continue;
-                }
-                if (part === 'glitch' && document.getElementById('glitch-style')) {
-                    document.getElementById('glitch-style').remove();
-                    combinedResult += '<span class="green">[OK]</span> Glitch effect disabled.\n\n';
-                    continue;
-                }
-                if (part === 'scan' && document.getElementById('scan-style')) {
-                    document.getElementById('scan-style').remove();
-                    combinedResult += '<span class="green">[OK]</span> Scanlines disabled.\n\n';
-                    continue;
-                }
-
-                const result = commands[part]();
-                if (result) combinedResult += result + '\n\n';
-            } else {
-                combinedResult += `<span class="dim">[ERROR]</span> '${part}' is not recognized.\n\n`;
-            }
+            const result = commands[part]?.();
+            combined += result ? result + '\n\n' : `<span class="dim">[ERROR]</span> '${part}' is not recognized.\n\n`;
         }
-
         const resultDiv = document.createElement('div');
-        resultDiv.innerHTML = combinedResult;
+        resultDiv.innerHTML = combined;
         output.appendChild(resultDiv);
         output.scrollTop = output.scrollHeight;
     }
 
-    // Terminal input handling
     document.addEventListener('keydown', e => {
         if (!terminalActive && e.key === 'Enter') {
             terminalActive = true;
-            document.getElementById('prompt-line').classList.add('bright');
-            const output = document.getElementById('command-output');
-            output.style.display = 'block';
-            output.innerHTML = `<span class="bright">════════════════════════════════════</span>
+            const o = document.getElementById('command-output');
+            o.style.display = 'block';
+            o.innerHTML = `<span class="bright">════════════════════════════════════</span>
 <span class="bright">[SYSTEM]</span> Terminal activated.
 <span class="bright">════════════════════════════════════</span>
 
 Welcome to the FRXCTURA terminal interface.
 Type "<span class="bright">help</span>" for available commands.
 `;
+            document.getElementById('prompt-line').classList.add('bright');
             return;
         }
 
         if (!terminalActive) return;
+        const ui = document.getElementById('user-input');
 
         if (e.key === 'Enter') {
             executeCommand(currentInput);
             currentInput = "";
-            document.getElementById('user-input').textContent = '';
+            ui.textContent = '';
         } else if (e.key === 'Backspace') {
             e.preventDefault();
             currentInput = currentInput.slice(0, -1);
-            document.getElementById('user-input').textContent = currentInput;
+            ui.textContent = currentInput;
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
             if (historyIndex < commandHistory.length - 1) {
                 historyIndex++;
                 currentInput = commandHistory[historyIndex];
-                document.getElementById('user-input').textContent = currentInput;
+                ui.textContent = currentInput;
             }
         } else if (e.key === 'ArrowDown') {
             e.preventDefault();
             if (historyIndex > 0) {
                 historyIndex--;
                 currentInput = commandHistory[historyIndex];
-                document.getElementById('user-input').textContent = currentInput;
+                ui.textContent = currentInput;
             } else if (historyIndex === 0) {
                 historyIndex = -1;
                 currentInput = '';
-                document.getElementById('user-input').textContent = '';
+                ui.textContent = '';
             }
         } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
             currentInput += e.key;
-            document.getElementById('user-input').textContent = currentInput;
+            ui.textContent = currentInput;
         }
     });
 </script>
