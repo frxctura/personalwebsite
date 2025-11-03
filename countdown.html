@@ -351,25 +351,27 @@ psst.. press<span class="bright"> ENTER</span>
     }
 
 const heartfeltMessage = `
-This past year has been a ride, full of twists I didn't expect, 
+This past year has been a ride, full of twists I didn't expect
 Times I felt lost, moments when I barely recognized myself 
-But you guys, you've been here, and that's changed everything.
+But you guys, you've been here, and that's changed everything
 
 You've shaped me into who I am today  
-Helped me stand taller, breathe easier, and truly appreciate the people around me.
+Helped me stand taller, breathe easier, and truly appreciate the people around me
 
 So here's to my 20th birthday  
 Here's to the start of another decade of my life  
 One that I'm excited to step into with all of you alongside me 
 
-Thank you for being my friends, my support, my safe space  
-For standing by me through every high and low 
-I couldn't have made it here without you, and I'm endlessly grateful.
+Thank you all for being my friends, my support, my safe space  
+For standing by me through every high and low, no matter what
+I couldn't have made it here without you all, and I'm endlessly grateful for that
 
 Here's to more adventures, more laughter, more moments where we just exist together
-You've made my world brighter, and I hope I can do the same for you  
+You've all made my world brighter, and I hope I can do the same for you  
 
-I love you all, truly.
+I love you all, truly
+
+<3
 `;
 
     const expandButton = document.getElementById("expand-heartfelt");
@@ -402,7 +404,7 @@ I love you all, truly.
         } else {
             heartfeltContainer.style.display = "block";
             expandButton.textContent = "[-] Hide message";
-            typeWriter(heartfeltMessage, heartfeltText, 25);
+            typeWriter(heartfeltMessage, heartfeltText, 15);
             heartfeltContainer.scrollIntoView({ behavior: "smooth", block: "center" });
         }
     });
